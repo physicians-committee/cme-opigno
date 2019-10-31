@@ -7,6 +7,19 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "mozilla/pdf.js",
+                "version": "dev-master",
+                "type": "drupal-library",
+                "source": {
+                    "url": "https://github.com/mozilla/pdf.js",
+                    "type": "git",
+                    "reference": "origin/gh-pages"
+                }
+            }
         }
     ],
     "require": {
@@ -17,12 +30,12 @@
         "drupal/config_direct_save": "^1.0",
         "drupal/config_installer": "^1.0",
         "drupal/console": "^1",
-        "drupal/core": "^8.6.15",
+        "drupal/core": "8.7.7",
         "drush-ops/behat-drush-endpoint": "^9.3",
         "drush/drush": "~8.3",
+        "opigno/opigno-composer": "^2.8",
         "pantheon-systems/quicksilver-pushback": "^2",
         "rvtraveller/qs-composer-installer": "^1.1",
-        "webflo/drupal-core-strict": "^8.6.15",
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
@@ -45,7 +58,7 @@
     "conflict": {
             "drupal/drupal": "*"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "autoload": {
         "classmap": [
