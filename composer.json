@@ -122,6 +122,11 @@
                 ".htaccess",
                 "web.config"
             ]
+        },
+        "enable-patching": true,
+        "composer-exit-on-patch-failure": false,
+        "patchLevel": {
+            "drupal/core": "-p2"
         }
     },
     "config": {
