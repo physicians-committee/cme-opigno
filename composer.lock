@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3889f67ed9ef18b2c9f2ff093d474019",
+    "content-hash": "f853c2a63ba41ff5b8fdb9e8bde9bcad",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1554,6 +1554,13 @@
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "2699477": "https://www.drupal.org/files/issues/2018-04-06/calendar-date_range-2699477-71.patch",
+                    "2604546": "https://www.drupal.org/files/issues/2018-05-09/2604546-33.patch",
+                    "2630234": "https://www.drupal.org/files/issues/fix_menu_tabs_in-2630234-15.patch",
+                    "2867991": "https://www.drupal.org/files/issues/tab_navigation_not_working_after_using_pager-2867991-5.patch",
+                    "2955351": "https://www.drupal.org/files/issues/2018-04-23/2955351-5-base-filter.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2745,6 +2752,10 @@
                     "recurse": false,
                     "replace": false,
                     "merge-extra": false
+                },
+                "patches_applied": {
+                    "2924061": "https://www.drupal.org/files/issues/2019-04-15/2924061-14.patch",
+                    "2898635": "https://www.drupal.org/files/issues/2018-04-20/views-code_bundle_fields-2898635-16.patch"
                 }
             },
             "autoload": {
@@ -3475,6 +3486,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "2969184": "https://www.drupal.org/files/issues/2018-05-03/entity_print-dompdf-2969184.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -3698,6 +3712,10 @@
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "2736233": "https://www.drupal.org/files/issues/2018-04-20/2736233-156.patch",
+                    "2973005": "https://www.drupal.org/files/issues/2018-05-15/group-2973005-2.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -3751,6 +3769,9 @@
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "3018798": "https://www.drupal.org/files/issues/2019-07-09/opigno-module-h5p-hidetitle-3018798-6.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -6169,6 +6190,9 @@
                     "services": {
                         "drush.services.yml": "^9"
                     }
+                },
+                "patches_applied": {
+                    "2961332": "https://www.drupal.org/files/issues/2018-07-03/private-message-2961332-2.0.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -6767,6 +6791,9 @@
                         "message": "Covered by Drupal's security advisory policy"
                     },
                     "package": "Field types"
+                },
+                "patches_applied": {
+                    "Add source and destination module for migrate plugin": "https://www.drupal.org/files/issues/2018-07-18/2986682-2.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -6870,7 +6897,8 @@
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
                     }
-                }
+                },
+                "patches_applied": []
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
@@ -6890,8 +6918,7 @@
             "homepage": "https://www.drupal.org/project/views_role_based_global_text",
             "support": {
                 "source": "https://git.drupalcode.org/project/views_role_based_global_text"
-            },
-            "time": "2018-12-20T07:26:02+00:00"
+            }
         },
         {
             "name": "drupal/views_templates",
@@ -7218,35 +7245,9 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/enyo/dropzone.git",
-                "reference": "08b9e0a763b54a685404dea523a9c54242fbe1b9"
+                "reference": "origin/master"
             },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/enyo/dropzone/zipball/08b9e0a763b54a685404dea523a9c54242fbe1b9",
-                "reference": "08b9e0a763b54a685404dea523a9c54242fbe1b9",
-                "shasum": ""
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Matias Meno",
-                    "email": "m@tias.me",
-                    "homepage": "http://www.matiasmeno.com"
-                }
-            ],
-            "description": "Handles drag and drop of files for you.",
-            "homepage": "http://www.dropzonejs.com",
-            "keywords": [
-                "drag and drop",
-                "dragndrop",
-                "file upload",
-                "upload"
-            ],
-            "time": "2018-07-06T14:20:31+00:00"
+            "type": "drupal-library"
         },
         {
             "name": "firebase/php-jwt",
