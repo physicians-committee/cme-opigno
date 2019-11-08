@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f853c2a63ba41ff5b8fdb9e8bde9bcad",
+    "content-hash": "dce09e30c2ca8e212a51d5fafa273f68",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1535,7 +1535,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/calendar.git",
-                "reference": "1ef5b86b11bf69641cc6539bcc93f73e7afb8ebf"
+                "reference": "73e2979"
             },
             "require": {
                 "drupal/calendar_datetime": "*",
@@ -1556,10 +1556,12 @@
                     }
                 },
                 "patches_applied": {
+                    "2756445": "https://www.drupal.org/files/issues/2756445-month-names-not-showing-10.patch",
                     "2699477": "https://www.drupal.org/files/issues/2018-04-06/calendar-date_range-2699477-71.patch",
                     "2604546": "https://www.drupal.org/files/issues/2018-05-09/2604546-33.patch",
                     "2630234": "https://www.drupal.org/files/issues/fix_menu_tabs_in-2630234-15.patch",
                     "2867991": "https://www.drupal.org/files/issues/tab_navigation_not_working_after_using_pager-2867991-5.patch",
+                    "2901594": "https://www.drupal.org/files/issues/week-week-day-display-issues-2901594-15.patch",
                     "2955351": "https://www.drupal.org/files/issues/2018-04-23/2955351-5-base-filter.patch"
                 }
             },
@@ -1598,7 +1600,7 @@
                 "source": "http://cgit.drupalcode.org/calendar",
                 "issues": "https://www.drupal.org/project/issues/calendar"
             },
-            "time": "2018-07-05T11:35:40+00:00"
+            "time": "2018-01-04T14:54:04+00:00"
         },
         {
             "name": "drupal/calendar_datetime",
@@ -4184,7 +4186,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/media_entity_browser.git",
-                "reference": "8129394b5a28960ed71db5c58de67501d08fd9c1"
+                "reference": "c75921d"
             },
             "require": {
                 "drupal/core": "*",
@@ -4240,7 +4242,7 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/media_entity_browser"
             },
-            "time": "2019-08-05T00:42:18+00:00"
+            "time": "2018-04-05T08:15:29+00:00"
         },
         {
             "name": "drupal/message",
@@ -5980,7 +5982,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/pdf.git",
-                "reference": "ec8d13d0d91678946e9e23ec71984e1979818585"
+                "reference": "f558259"
             },
             "require": {
                 "drupal/core": "*"
@@ -6030,7 +6032,7 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/pdf"
             },
-            "time": "2019-08-05T13:33:30+00:00"
+            "time": "2018-10-04T16:03:11+00:00"
         },
         {
             "name": "drupal/platon",
@@ -6212,6 +6214,10 @@
                 {
                     "name": "edutrul",
                     "homepage": "https://www.drupal.org/user/1621444"
+                },
+                {
+                    "name": "phjou",
+                    "homepage": "https://www.drupal.org/user/3344054"
                 }
             ],
             "description": "A private message system for users to send messages to each other.",
@@ -6834,7 +6840,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/view_mode_selector.git",
-                "reference": "93d105f77d073ac9eb5253024058991aa3b10cf8"
+                "reference": "11c9ad2"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -6872,7 +6878,7 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/view_mode_selector"
             },
-            "time": "2018-11-13T16:00:21+00:00"
+            "time": "2018-02-12T12:03:58+00:00"
         },
         {
             "name": "drupal/views_role_based_global_text",
@@ -6880,7 +6886,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/views_role_based_global_text.git",
-                "reference": "026dc0e8e9d2b953b40f14b0634f2cce55780206"
+                "reference": "550f8e0"
             },
             "require": {
                 "drupal/core": "*"
@@ -6898,7 +6904,9 @@
                         "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 },
-                "patches_applied": []
+                "patches_applied": {
+                    "2969716": "https://www.drupal.org/files/issues/2018-05-04/2969716-Undefined-index-default.patch"
+                }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
@@ -6918,7 +6926,8 @@
             "homepage": "https://www.drupal.org/project/views_role_based_global_text",
             "support": {
                 "source": "https://git.drupalcode.org/project/views_role_based_global_text"
-            }
+            },
+            "time": "2015-05-14T10:07:37+00:00"
         },
         {
             "name": "drupal/views_templates",
@@ -7644,7 +7653,7 @@
                 "reference": "origin/gh-pages"
             },
             "type": "drupal-library",
-            "time": "2019-10-30T21:51:08+00:00"
+            "time": "2019-11-07T22:38:10+00:00"
         },
         {
             "name": "namshi/jose",
@@ -7759,90 +7768,6 @@
                 "php"
             ],
             "time": "2019-09-01T07:51:21+00:00"
-        },
-        {
-            "name": "opigno/opigno-composer",
-            "version": "2.8.0",
-            "source": {
-                "type": "git",
-                "url": "https://bitbucket.org/opigno/opigno-composer.git",
-                "reference": "f11c1a949558b082a7a709a670594d7eb40d3661"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/opigno/opigno-composer/get/f11c1a949558b082a7a709a670594d7eb40d3661.zip",
-                "reference": "f11c1a949558b082a7a709a670594d7eb40d3661",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "^1.2",
-                "cweagans/composer-patches": "^1.6",
-                "drupal-composer/drupal-scaffold": "^2.5",
-                "drupal/calendar": "1.x-dev#73e2979",
-                "drupal/media_entity_browser": "2.x-dev#c75921d",
-                "drupal/pdf": "1.x-dev#f558259",
-                "drupal/view_mode_selector": "1.x-dev#11c9ad2",
-                "drupal/views_role_based_global_text": "1.x-dev#550f8e0",
-                "opigno/opigno_lms": "2.8.0",
-                "wikimedia/composer-merge-plugin": "dev-master"
-            },
-            "replace": {
-                "h5p/h5p-core": "*",
-                "h5p/h5p-editor": "*"
-            },
-            "require-dev": {
-                "drupal/console": "~1.0",
-                "drush/drush": "^9.1"
-            },
-            "type": "project",
-            "extra": {
-                "installer-paths": {
-                    "web/core": [
-                        "type:drupal-core"
-                    ],
-                    "web/libraries/{$name}": [
-                        "type:drupal-library"
-                    ],
-                    "web/modules/contrib/{$name}": [
-                        "type:drupal-module"
-                    ],
-                    "web/profiles/contrib/{$name}": [
-                        "type:drupal-profile"
-                    ],
-                    "web/themes/contrib/{$name}": [
-                        "type:drupal-theme"
-                    ],
-                    "drush/Commands/{$name}": [
-                        "type:drupal-drush"
-                    ]
-                },
-                "drupal-scaffold": {
-                    "initial": {
-                        ".editorconfig": "../.editorconfig",
-                        ".gitattributes": "../.gitattributes"
-                    }
-                },
-                "enable-patching": true,
-                "composer-exit-on-patch-failure": false,
-                "patchLevel": {
-                    "drupal/core": "-p2"
-                }
-            },
-            "autoload": {
-                "classmap": [
-                    "scripts/composer/ScriptHandler.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                []
-            ],
-            "description": "Opigno LMS",
-            "homepage": "https://bitbucket.org/opigno/opigno-composer",
-            "time": "2019-10-04T06:26:17+00:00"
         },
         {
             "name": "opigno/opigno_lms",
@@ -9539,16 +9464,16 @@
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v3.4.32",
+            "version": "v3.4.33",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "233f40cbebd595ffd91ddf291355f8a930a13777"
+                "reference": "7b4626ab40d8562707e6d1c9a6fab977a86c2037"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/233f40cbebd595ffd91ddf291355f8a930a13777",
-                "reference": "233f40cbebd595ffd91ddf291355f8a930a13777",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/7b4626ab40d8562707e6d1c9a6fab977a86c2037",
+                "reference": "7b4626ab40d8562707e6d1c9a6fab977a86c2037",
                 "shasum": ""
             },
             "require": {
@@ -9589,7 +9514,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2019-10-02T16:15:21+00:00"
+            "time": "2019-10-24T15:33:53+00:00"
         },
         {
             "name": "symfony/http-kernel",
@@ -13448,7 +13373,14 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "drupal/calendar": 20,
+        "drupal/media_entity_browser": 20,
+        "drupal/pdf": 20,
+        "drupal/view_mode_selector": 20,
+        "drupal/views_role_based_global_text": 20,
+        "wikimedia/composer-merge-plugin": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
