@@ -1,0 +1,12 @@
+uuid: 10e43abb-8cd7-451f-bf9d-3b2d734d9e50
+langcode: en
+status: true
+dependencies:
+  module:
+    - private_message
+_core:
+  default_config_hash: jsZ3XzsrnCZnVeBBzd16cMg0MQ3m1NJb_SZY-FwiCM0
+id: private_message.thread_preview
+label: 'Thread Preview'
+targetEntityType: private_message
+cache: true

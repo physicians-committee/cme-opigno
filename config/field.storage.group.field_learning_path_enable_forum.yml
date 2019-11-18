@@ -1,0 +1,20 @@
+uuid: 057a1ce3-c5c2-4bc1-b389-315c739cb531
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+_core:
+  default_config_hash: 6AjUlOTqVhUy9Lds3gnEPyMh8DyNtOBoQJpHmXlLEJ4
+id: group.field_learning_path_enable_forum
+field_name: field_learning_path_enable_forum
+entity_type: group
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

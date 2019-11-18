@@ -1,0 +1,14 @@
+uuid: 47e78dea-3e22-4672-8aa1-a04b9c1f8ea6
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.collaborative_features
+  module:
+    - user
+id: user_remove_role_action.collaborative_features
+label: 'Remove the Collaborative features role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: collaborative_features

@@ -1,0 +1,13 @@
+uuid: 4260e8d2-2c62-4c0e-a7cf-d62c39854eee
+langcode: en
+status: true
+dependencies:
+  module:
+    - opigno_module
+_core:
+  default_config_hash: g_LwER7kbCF_Oag-jcml2x1VKY7Cq2ddS4QHlkpF9vU
+id: opigno_module_add_activity
+label: 'Add activities to Module'
+type: opigno_activity
+plugin: opigno_module_add_activity
+configuration: {  }

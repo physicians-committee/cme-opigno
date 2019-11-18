@@ -1,0 +1,39 @@
+uuid: 7a332e1a-35ba-4bdb-a954-9e58fbf5cd51
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.opigno_calendar_event.embedded_display
+    - field.field.opigno_calendar_event.meeting_calendar_event.field_calendar_event_members
+    - field.field.opigno_calendar_event.meeting_calendar_event.field_meeting
+    - opigno_calendar_event.type.meeting_calendar_event
+  enforced:
+    module:
+      - opigno_moxtra
+  module:
+    - datetime_range
+_core:
+  default_config_hash: dABbTKVvnfbqHH9WW_97yvK6MSop7K19YJs2dYNyY9Q
+id: opigno_calendar_event.meeting_calendar_event.embedded_display
+targetEntityType: opigno_calendar_event
+bundle: meeting_calendar_event
+mode: embedded_display
+content:
+  date_daterange:
+    type: daterange_default
+    weight: 0
+    region: content
+    label: above
+    settings:
+      separator: '-'
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_calendar_event_members: true
+  field_meeting: true
+  title: true

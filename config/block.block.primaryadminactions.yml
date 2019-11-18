@@ -1,0 +1,27 @@
+uuid: a2e7f3a5-def4-4c23-b4cc-7aadde55dc1e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - platon
+_core:
+  default_config_hash: t5kQiNRrUGliXJbKpoTiYuMNe4uh52vsvuXw0JLH3-g
+id: primaryadminactions
+theme: platon
+region: content
+weight: 2
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Catalog Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /catalogue
+    negate: false
+    context_mapping: {  }

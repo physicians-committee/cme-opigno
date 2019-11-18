@@ -1,0 +1,22 @@
+uuid: d0b8296f-2bb2-4200-9305-fa5a355976fb
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - platon
+_core:
+  default_config_hash: GTYc5ua7UYaSlysVr8JrcfA6Cv_BbsF5GZlaOp1IDTI
+id: platon_breadcrumbs
+theme: platon
+region: top
+weight: -5
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

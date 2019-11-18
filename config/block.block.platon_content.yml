@@ -1,0 +1,22 @@
+uuid: 6192f2bd-7e22-48b0-bdd5-ee19c2a1c5a7
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - platon
+_core:
+  default_config_hash: 1M3v00qimf309JJUOzcesFkJONWm0AeSA7Hu4o85krg
+id: platon_content
+theme: platon
+region: content
+weight: 1
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

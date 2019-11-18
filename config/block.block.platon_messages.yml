@@ -1,0 +1,22 @@
+uuid: 7e9143a9-5a2d-46c7-8523-3e7665bad141
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - platon
+_core:
+  default_config_hash: 3l78h6fPcncq1oY3J-GRE9lRdexDcx-dUWoBgfmLPNk
+id: platon_messages
+theme: platon
+region: status_messages
+weight: -8
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

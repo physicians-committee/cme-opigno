@@ -1,0 +1,31 @@
+uuid: ef79a4b4-6f8e-42fa-a966-8c0b3a9cf4fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_forum
+    - field.field.comment.comment_forum.comment_body
+  module:
+    - text
+_core:
+  default_config_hash: Td9G-YV2hlf2GR_F3rjhQZxwdq1yD7P_W-Wl2Ivf7Iw
+id: comment.comment_forum.default
+targetEntityType: comment
+bundle: comment_forum
+mode: default
+content:
+  comment_body:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  private_message_link: true

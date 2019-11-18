@@ -1,4 +1,4 @@
-uuid: 9e432b77-8dbc-4f62-8fbe-62ae82419354
+uuid: d919fe37-eec7-4236-906a-2b50e0518176
 langcode: en
 status: true
 dependencies:
@@ -25,4 +25,8 @@ content:
   links:
     weight: 101
     region: content
-hidden: {  }
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  private_message_link: true

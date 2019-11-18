@@ -1,0 +1,17 @@
+uuid: 7eb498b8-424d-45f5-9949-deba9170ff49
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.opigno_class
+  enforced:
+    config:
+      - user.role.collaborative_features
+id: opigno_class-68b45153a
+label: 'Collaborative features'
+weight: -8
+internal: true
+audience: outsider
+group_type: opigno_class
+permissions_ui: false
+permissions: {  }

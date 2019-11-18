@@ -1,0 +1,21 @@
+uuid: 8b65fc28-0d19-46b6-8829-928e467ec64a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_level_names
+    - taxonomy.vocabulary.skills
+_core:
+  default_config_hash: '-PMfJfaEaKAlDmXzC9Q22eh97adgYTLqphlYmYjQ9dA'
+id: taxonomy_term.skills.field_level_names
+field_name: field_level_names
+entity_type: taxonomy_term
+bundle: skills
+label: 'Level names'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

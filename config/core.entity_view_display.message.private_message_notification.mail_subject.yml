@@ -1,0 +1,26 @@
+uuid: aca6b0b6-c6d9-4007-955e-524913fe254b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.message.mail_subject
+    - field.field.message.private_message_notification.field_message_private_message
+    - message.template.private_message_notification
+_core:
+  default_config_hash: wnjKbEVFypVwQ3dhv3vS5fccO-nmPwGZ1mYzjb7BuNo
+id: message.private_message_notification.mail_subject
+targetEntityType: message
+bundle: private_message_notification
+mode: mail_subject
+content:
+  partial_0:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_message_private_message: true
+  partial_1: true

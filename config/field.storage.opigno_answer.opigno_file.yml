@@ -1,0 +1,25 @@
+uuid: df06056c-1a2b-4cfb-aae3-053a4551db37
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - opigno_module
+_core:
+  default_config_hash: MrK4A7_lMzY65GKIjJcvZDHE-kT7Y0tpFaoWFZfJ3y0
+id: opigno_answer.opigno_file
+field_name: opigno_file
+entity_type: opigno_answer
+type: file
+settings:
+  display_field: false
+  display_default: false
+  uri_scheme: private
+  target_type: file
+module: file
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
