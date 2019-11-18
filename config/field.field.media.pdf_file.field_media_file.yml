@@ -1,0 +1,29 @@
+uuid: ccc5e1dc-023e-4ad7-8059-8516c4f0ddbe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_file
+    - media.type.pdf_file
+  module:
+    - file
+_core:
+  default_config_hash: JNIQlCTMl_DGpt_mD29TooiuQJvwZzH0H3G48tK3lec
+id: media.pdf_file.field_media_file
+field_name: field_media_file
+entity_type: media
+bundle: pdf_file
+label: File
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: pdf
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

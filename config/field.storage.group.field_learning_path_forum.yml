@@ -1,0 +1,22 @@
+uuid: ca256c36-5e43-4cb8-8f6f-ff3861bd4402
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+    - taxonomy
+_core:
+  default_config_hash: fmU3ha9r8f7wKfCO40mAhIZwzzDIO9VMo1B_OC6Olxw
+id: group.field_learning_path_forum
+field_name: field_learning_path_forum
+entity_type: group
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

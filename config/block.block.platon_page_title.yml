@@ -1,0 +1,20 @@
+uuid: ef188ec6-452a-4d07-94dd-2c2f38a45084
+langcode: en
+status: true
+dependencies:
+  theme:
+    - platon
+_core:
+  default_config_hash: ii5gIZI7JEnVL4TtsTtE2RUeLFNKa6EgTvU_zjmLDnA
+id: platon_page_title
+theme: platon
+region: top
+weight: -4
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

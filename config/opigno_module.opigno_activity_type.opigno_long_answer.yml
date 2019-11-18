@@ -1,0 +1,11 @@
+uuid: e9233c3f-490b-49a7-a458-f166cb173020
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: LdsBIhj4os1XFBuWQbZQ-zi1CT6ABp4vjXdNBsRHStk
+id: opigno_long_answer
+label: 'Long answer'
+description: 'Long answer question let the students fill-in a text, that will be manually scored by the teacher.'
+summary: null
+image: null

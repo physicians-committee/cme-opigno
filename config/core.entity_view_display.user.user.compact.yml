@@ -1,9 +1,10 @@
-uuid: b3c6b696-2b20-4be5-9f7f-fd66f82e36ca
+uuid: 89df39be-d1b9-4323-bbae-6a2bdaa95343
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
+    - field.field.user.user.field_created_by
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -26,4 +27,10 @@ content:
     third_party_settings: {  }
     label: hidden
 hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_created_by: true
+  linked_username: true
   member_for: true
+  private_message_link: true

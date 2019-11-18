@@ -1,0 +1,32 @@
+uuid: c222ab4f-37d2-4f62-b87e-ff482943dc6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.opigno_notifications
+  module:
+    - system
+    - views
+  theme:
+    - platon
+_core:
+  default_config_hash: D4n2AxgQsTRgmDcTrGR_kgj6orEoG438aShKY0Z-48E
+id: dashboard_views_block_opigno_notifications_block_unread_dashboard
+theme: platon
+region: content
+weight: -2
+provider: null
+plugin: 'views_block:opigno_notifications-block_unread_dashboard'
+settings:
+  id: 'views_block:opigno_notifications-block_unread_dashboard'
+  label: 'Dashboard: Opigno Notifications: Dashboard - Unread Notifications'
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

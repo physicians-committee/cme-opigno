@@ -1,0 +1,19 @@
+uuid: 8367f4d7-9e33-465e-b9c5-9ec8722d5622
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.opigno_class
+_core:
+  default_config_hash: WZKrDYE6FtQwk3La_gxCYRID7RpfDGUXsONgFffJAIQ
+id: opigno_class-member
+label: Member
+weight: -100
+internal: true
+audience: member
+group_type: opigno_class
+permissions_ui: true
+permissions:
+  - 'leave group'
+  - 'view group_membership content'
+  - 'view group'

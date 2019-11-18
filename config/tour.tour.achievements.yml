@@ -1,0 +1,42 @@
+uuid: cbe47f90-b0b5-4dfc-9c5c-243d6973c2df
+langcode: en
+status: true
+dependencies:
+  module:
+    - opigno_tour
+_core:
+  default_config_hash: AA01Pdavsqy0bIdChJhvfQ3i1jGjI6U7UTP7ZkVB27c
+id: achievements
+label: 'Achievements tour'
+module: opigno_tour
+routes:
+  -
+    route_name: opigno_learning_path.achievements
+tips:
+  achievements-timeline:
+    id: achievements-timeline
+    plugin: text
+    label: Timeline
+    body: 'This timeline presents the mandatory steps of the training and your result for each of them.'
+    weight: 1
+    attributes:
+      data-class: lp_timeline_begin
+    location: bottom
+  achievements-certificate:
+    id: achievements-certificate
+    plugin: text
+    label: Certificate
+    body: 'In case a certificate is available for that training, you will be able to download it by clicking here once you successfully finished the training.'
+    weight: 2
+    attributes:
+      data-class: lp_summary_certificate_icon
+    location: right
+  achievements-details:
+    id: achievements-details
+    plugin: text
+    label: 'Results details'
+    body: 'Click here to see more details about your results for that training.'
+    weight: 3
+    attributes:
+      data-class: lp_details_show_text
+    location: left

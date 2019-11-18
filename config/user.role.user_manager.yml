@@ -1,0 +1,24 @@
+uuid: 9b82c230-7502-4795-87e5-dfa4d5340c8b
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: OSudqyWnN9zW-rd-aYNLQILC6Y4SPAzxBI3TnaM0Qzs
+id: user_manager
+label: 'User manager'
+weight: -6
+is_admin: null
+permissions:
+  - 'access media_entity_browser_groups entity browser pages'
+  - 'administer users'
+  - 'create image media'
+  - 'create opigno_class group'
+  - 'delete any image media'
+  - 'delete own image media'
+  - 'dropzone upload files'
+  - 'edit any image media'
+  - 'edit own image media'
+  - 'manage group members in any group'
+  - 'message all groups'
+  - 'message anyone regardless of groups'
+  - 'score ilt entities'

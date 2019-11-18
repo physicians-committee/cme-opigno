@@ -1,4 +1,4 @@
-uuid: 2ab67490-cd0d-4bf4-933c-d8aafa729531
+uuid: aedc9c7a-3826-4f67-bfe8-ca181727d1f0
 langcode: en
 status: true
 dependencies:
@@ -21,4 +21,7 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true

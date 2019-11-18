@@ -1,0 +1,55 @@
+uuid: 0c91224e-85a5-4c7f-8a81-20a7379479e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.opigno_certificate_wysiwyg
+  module:
+    - ckeditor
+_core:
+  default_config_hash: NH0VlPR-AXj5GCnn4Wxgp8BTsj4Ns-h5s-NNmKrjsKY
+format: opigno_certificate_wysiwyg
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Bold
+            - Italic
+        -
+          name: Links
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Media
+          items:
+            - Blockquote
+            - DrupalImage
+        -
+          name: Tools
+          items:
+            - Source
+  plugins:
+    stylescombo:
+      styles: ''
+    language:
+      language_list: un
+    tokenbrowser:
+      token_types: {  }
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

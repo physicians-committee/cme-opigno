@@ -1,0 +1,12 @@
+uuid: de1295ec-89bf-4128-8252-e4617ae219ed
+langcode: en
+status: false
+dependencies:
+  module:
+    - opigno_certificate
+_core:
+  default_config_hash: jN6Ep_xQj2sRy8qggOereMuqjCdBQh99NOpjBx1aTFA
+id: opigno_certificate.default
+label: Default
+targetEntityType: opigno_certificate
+cache: true

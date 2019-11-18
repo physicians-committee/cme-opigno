@@ -1,4 +1,4 @@
-uuid: 3efdefab-b208-452e-baae-59eca18dd532
+uuid: 858ae1a5-da5c-4047-a5c1-c8f596f68d96
 langcode: en
 status: true
 dependencies:
@@ -8,7 +8,7 @@ dependencies:
     - image
     - user
 _core:
-  default_config_hash: Iiq0AttdhgbebJwabSFwQQ1ORn64GoGz0xSZ_eyCJ8A
+  default_config_hash: d4y_UJI7aYbO3KKvmmyrel2GNTSvlkJzYkVT4Y2i2-0
 id: user.user.user_picture
 field_name: user_picture
 entity_type: user
@@ -20,12 +20,10 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  file_extensions: 'png gif jpg jpeg'
   file_directory: 'pictures/[date:custom:Y]-[date:custom:m]'
-  max_filesize: ''
-  alt_field: false
-  title_field: false
-  max_resolution: ''
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: 3MB
+  max_resolution: 220x220
   min_resolution: ''
   default_image:
     uuid: null
@@ -33,8 +31,10 @@ settings:
     title: ''
     width: null
     height: null
-  alt_field_required: false
-  title_field_required: false
   handler: 'default:file'
   handler_settings: {  }
+  alt_field: false
+  alt_field_required: false
+  title_field: false
+  title_field_required: false
 field_type: image

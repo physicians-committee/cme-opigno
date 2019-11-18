@@ -1,0 +1,25 @@
+uuid: f8a7395e-c8c7-4249-bb87-cc8a5a23093c
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - private_message
+  module:
+    - message
+    - private_message
+_core:
+  default_config_hash: mqgzJErWUxwH_N2Xr0VUTVA9c_Z0Z4eBeBr2-lxfnik
+id: message.field_message_pm_thread
+field_name: field_message_pm_thread
+entity_type: message
+type: entity_reference
+settings:
+  target_type: private_message_thread
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

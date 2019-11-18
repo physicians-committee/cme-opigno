@@ -1,0 +1,39 @@
+uuid: 9d3eb938-a6e5-452b-8883-6daae6bd488a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.group_content.learning_path-group_membership.group_roles
+    - group.content_type.learning_path-group_membership
+  module:
+    - path
+_core:
+  default_config_hash: mmrqAHf1XOovf_zr9DZRxtUIQ_c6chJn9aw3VQe-Owk
+id: group_content.learning_path-group_membership.default
+targetEntityType: group_content
+bundle: learning_path-group_membership
+mode: default
+content:
+  entity_id:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  group_roles:
+    type: options_buttons
+    weight: 31
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  uid: true

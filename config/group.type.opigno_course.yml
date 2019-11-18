@@ -1,0 +1,13 @@
+uuid: 35d8c552-4c43-4ef1-aceb-310f2a1cbf13
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 6S7YUVSrh1TxR0Cb_uBIshoi-A3TEQIL4GUrRskHfYo
+id: opigno_course
+label: Course
+description: 'A group of Learning Path content.'
+creator_membership: true
+creator_wizard: false
+creator_roles:
+  - opigno_course-admin
