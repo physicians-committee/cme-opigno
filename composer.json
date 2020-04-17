@@ -43,7 +43,7 @@
         "drupal/config_direct_save": "^1.0",
         "drupal/config_installer": "^1.0",
         "drupal/console": "^1",
-        "drupal/core": "^8.7",
+        "drupal/core": "8.7.11",
         "drush-ops/behat-drush-endpoint": "^9.3",
         "drush/drush": "~9.1",
         "pantheon-systems/quicksilver-pushback": "^2",
