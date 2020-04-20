@@ -5,11 +5,11 @@ dependencies:
   module:
     - private_message
   theme:
-    - bartik
+    - platon
 _core:
   default_config_hash: YyBv3P89JqhFXGtEQj5CYIzIXVd8YzgjkBCvgYQJUU8
 id: privatemessagenotification
-theme: bartik
+theme: platon
 region: ''
 weight: -3
 provider: null

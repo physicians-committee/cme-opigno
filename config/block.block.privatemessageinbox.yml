@@ -6,11 +6,11 @@ dependencies:
     - private_message
     - system
   theme:
-    - bartik
+    - platon
 _core:
   default_config_hash: l3BQDhyCtI6351203W83eL1vO9MzqkIKdzAKhO7BYPY
 id: privatemessageinbox
-theme: bartik
+theme: platon
 region: ''
 weight: 0
 provider: null

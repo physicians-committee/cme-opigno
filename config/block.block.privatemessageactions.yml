@@ -9,11 +9,11 @@ dependencies:
     - private_message
     - system
   theme:
-    - bartik
+    - platon
 _core:
   default_config_hash: cw9CRgAFnwsLlehJngGO3y4VdvKW51EqBoLKdAI-tqg
 id: privatemessageactions
-theme: bartik
+theme: platon
 region: ''
 weight: 0
 provider: null
