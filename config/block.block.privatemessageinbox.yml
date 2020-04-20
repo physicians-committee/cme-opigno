@@ -11,7 +11,7 @@ _core:
   default_config_hash: l3BQDhyCtI6351203W83eL1vO9MzqkIKdzAKhO7BYPY
 id: privatemessageinbox
 theme: platon
-region: ''
+region: help
 weight: 0
 provider: null
 plugin: private_message_inbox_block
