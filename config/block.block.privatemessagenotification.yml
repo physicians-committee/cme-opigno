@@ -5,12 +5,12 @@ dependencies:
   module:
     - private_message
   theme:
-    - bartik
+    - platon
 _core:
   default_config_hash: YyBv3P89JqhFXGtEQj5CYIzIXVd8YzgjkBCvgYQJUU8
 id: privatemessagenotification
-theme: bartik
-region: ''
+theme: platon
+region: help
 weight: -3
 provider: null
 plugin: private_message_notification_block
@@ -19,5 +19,5 @@ settings:
   label: 'Private Message Notification'
   provider: private_message
   label_display: '0'
-  ajax_refresh_rate: '15'
+  ajax_refresh_rate: 15
 visibility: {  }

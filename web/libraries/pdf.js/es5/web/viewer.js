@@ -2889,11 +2889,24 @@ function webViewerKeyDown(evt) {
     }
   }
 
+  var eventBus = PDFViewerApplication.eventBus;
+
   if (cmd === 1 || cmd === 8) {
     switch (evt.keyCode) {
       case 83:
-        PDFViewerApplication.download();
+        eventBus.dispatch("download", {
+          source: window
+        });
         handled = true;
+        break;
+
+      case 79:
+        {
+          eventBus.dispatch("openfile", {
+            source: window
+          });
+          handled = true;
+        }
         break;
     }
   }
