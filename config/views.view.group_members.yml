@@ -1,3 +1,4 @@
+uuid: null
 langcode: en
 status: true
 dependencies:
@@ -14,7 +15,6 @@ description: ''
 tag: ''
 base_table: group_content_field_data
 base_field: id
-core: 8.x
 display:
   default:
     display_plugin: default
@@ -516,6 +516,8 @@ display:
           text: 'View member'
           entity_type: group_content
           plugin_id: entity_link
+          output_url_as_text: false
+          absolute: false
         edit_group_content:
           id: edit_group_content
           table: group_content

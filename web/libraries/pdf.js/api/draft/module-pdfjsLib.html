@@ -64,78 +64,6 @@
     
 
     
-        <h3 class="subsection-title">Members</h3>
-
-        
-            
-<h4 class="name" id="~createPDFNetworkStream"><span class="type-signature">(inner) </span>createPDFNetworkStream<span class="type-signature"> :IPDFStreamFactory</span></h4>
-
-
-
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">IPDFStreamFactory</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line116">line 116</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-    
 
     
         <h3 class="subsection-title">Methods</h3>
@@ -260,7 +188,7 @@ already populated with data or parameter object.</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line226">line 226</a>
+        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line192">line 192</a>
     </li></ul></dd>
     
 
@@ -303,146 +231,6 @@ already populated with data or parameter object.</td>
 </dl>
 
     
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="~setPDFNetworkStreamFactory"><span class="type-signature">(inner) </span>setPDFNetworkStreamFactory<span class="signature">(pdfNetworkStreamFactory)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Sets the function that instantiates a IPDFStream as an alternative PDF data
-transport.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>pdfNetworkStreamFactory</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">IPDFStreamFactory</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">the factory function
-that takes document initialization parameters (including a "url") and returns
-an instance of IPDFStream.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line125">line 125</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1169,6 +957,41 @@ an instance of IPDFStream.</td>
 
         <tr>
             
+                <td class="name"><code>fontExtraProperties</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Include additional properties,
+  which are unused during rendering of PDF documents, when exporting the
+  parsed font data from the worker-thread. This may be useful for debugging
+  purposes (and backwards compatibility), but note that it will lead to
+  increased memory usage. The default value is `false`.</td>
+        </tr>
+
+    
+
+        <tr>
+            
                 <td class="name"><code>disableRange</code></td>
             
 
@@ -1369,7 +1192,7 @@ an instance of IPDFStream.</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line129">line 129</a>
+        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line90">line 90</a>
     </li></ul></dd>
     
 
@@ -1496,7 +1319,7 @@ an instance of IPDFStream.</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line856">line 856</a>
+        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line862">line 862</a>
     </li></ul></dd>
     
 
@@ -1645,7 +1468,7 @@ an instance of IPDFStream.</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line816">line 816</a>
+        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line822">line 822</a>
     </li></ul></dd>
     
 
@@ -1905,7 +1728,7 @@ an instance of IPDFStream.</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line801">line 801</a>
+        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line807">line 807</a>
     </li></ul></dd>
     
 
@@ -1916,158 +1739,6 @@ an instance of IPDFStream.</td>
     
 </dl>
 
-
-
-
-
-
-            
-                
-
-    
-
-    
-    <h4 class="name" id="~IPDFStreamFactory"><span class="type-signature"></span>IPDFStreamFactory<span class="signature">(params)</span><span class="type-signature"> &rarr; {IPDFStream}</span></h4>
-    
-
-    
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>params</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">DocumentInitParameters</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The document initialization
-parameters. The "url" key is always present.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line108">line 108</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">IPDFStream</span>
-
-
-    </dd>
-</dl>
-
-    
 
 
 
@@ -2202,7 +1873,7 @@ parameters. The "url" key is always present.</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line207">line 207</a>
+        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line173">line 173</a>
     </li></ul></dd>
     
 
@@ -2350,7 +2021,7 @@ parameters. The "url" key is always present.</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line894">line 894</a>
+        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line900">line 900</a>
     </li></ul></dd>
     
 
@@ -2543,7 +2214,7 @@ parameters. The "url" key is always present.</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line1520">line 1520</a>
+        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line1564">line 1564</a>
     </li></ul></dd>
     
 
@@ -2934,7 +2605,7 @@ parameters. The "url" key is always present.</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line866">line 866</a>
+        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line872">line 872</a>
     </li></ul></dd>
     
 
@@ -3081,7 +2752,7 @@ parameters. The "url" key is always present.</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line826">line 826</a>
+        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line832">line 832</a>
     </li></ul></dd>
     
 
@@ -3320,7 +2991,7 @@ parameters. The "url" key is always present.</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line834">line 834</a>
+        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line840">line 840</a>
     </li></ul></dd>
     
 
@@ -3513,7 +3184,7 @@ parameters. The "url" key is always present.</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line846">line 846</a>
+        <a href="display_api.js.html">display/api.js</a>, <a href="display_api.js.html#line852">line 852</a>
     </li></ul></dd>
     
 
@@ -3549,7 +3220,7 @@ parameters. The "url" key is always present.</td>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Mon Nov 11 2019 23:16:15 GMT+0000 (Greenwich Mean Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Sat Apr 18 2020 12:47:23 GMT+0000 (Greenwich Mean Time)
 </footer>
 
 <script> prettyPrint(); </script>

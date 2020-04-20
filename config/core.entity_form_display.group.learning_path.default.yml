@@ -12,11 +12,13 @@ dependencies:
     - field.field.group.learning_path.field_learning_path_duration
     - field.field.group.learning_path.field_learning_path_enable_forum
     - field.field.group.learning_path.field_learning_path_folder
+    - field.field.group.learning_path.field_learning_path_forum
     - field.field.group.learning_path.field_learning_path_media_image
     - field.field.group.learning_path.field_learning_path_published
     - field.field.group.learning_path.field_learning_path_visibility
     - field.field.group.learning_path.field_required_trainings
     - field.field.group.learning_path.field_requires_validation
+    - field.field.group.learning_path.field_workspace
     - group.type.learning_path
   module:
     - entity_browser
@@ -104,6 +106,7 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: 'Training name'
+      match_limit: 10
     third_party_settings: {  }
     type: entity_reference_autocomplete_tags
     region: content

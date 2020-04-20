@@ -1,4 +1,3 @@
-uuid: 0c91224e-85a5-4c7f-8a81-20a7379479e9
 langcode: en
 status: true
 dependencies:
@@ -6,8 +5,13 @@ dependencies:
     - filter.format.opigno_certificate_wysiwyg
   module:
     - ckeditor
-_core:
-  default_config_hash: NH0VlPR-AXj5GCnn4Wxgp8BTsj4Ns-h5s-NNmKrjsKY
+    - ckeditor_bgimage
+third_party_settings:
+  ckeditor_bgimage:
+    status: true
+    scheme: public
+    directory: inline-files
+    extensions: 'png jpeg jpg'
 format: opigno_certificate_wysiwyg
 editor: ckeditor
 settings:
@@ -34,6 +38,7 @@ settings:
           items:
             - Blockquote
             - DrupalImage
+            - bgimage
         -
           name: Tools
           items:

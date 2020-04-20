@@ -2,6 +2,8 @@ uuid: 86fb9231-d8e3-4909-a3f7-1eecddc7a7f6
 langcode: en
 status: true
 dependencies:
+  config:
+    - field.field.private_message_thread.private_message_thread.field_pm_subject
   module:
     - private_message
 _core:
@@ -17,7 +19,10 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
+      max_members: 0
     weight: -3
     region: content
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_pm_subject: true

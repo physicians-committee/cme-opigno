@@ -1,12 +1,10 @@
-uuid: 44e8de95-b928-42b1-8bcf-cf0bc47e0552
+uuid: null
 langcode: en
 status: true
 dependencies:
   module:
     - opigno_module
     - user
-_core:
-  default_config_hash: Q2xD9EcronOWxGGzzKSSSf0ohtV4oX6-ljr8OPg6BjI
 id: opigno_score_modules
 label: 'Opigno Score Modules'
 module: views
@@ -14,7 +12,6 @@ description: ''
 tag: ''
 base_table: user_module_status
 base_field: id
-core: 8.x
 display:
   default:
     display_plugin: default
@@ -509,6 +506,8 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -667,7 +666,7 @@ display:
           admin_label: ''
           empty: false
           tokenize: true
-          content: "<a class=\"see-more primary text-center\" href=\"/opigno/unevaluated-modules\">\n<span>{{ 'see more'|t }}</span>\n</a>"
+          content: "<a class=\"see-more primary text-center\" href=\"{{ url('<front>') }}/opigno/unevaluated-modules\">\r\n<span>{{ 'see more'|t }}</span>\r\n</a>"
           plugin_id: text_custom
       fields:
         id:
