@@ -1,11 +1,9 @@
-uuid: 326f211c-df98-4e50-9993-e34c851309ca
+uuid: null
 langcode: en
 status: true
 dependencies:
   module:
     - opigno_notification
-_core:
-  default_config_hash: Dh5kro3krZTL2xaqM-rnX7m1uof0gI0gTDasRGvX6n4
 id: opigno_notifications
 label: 'Opigno Notifications'
 module: views
@@ -13,7 +11,6 @@ description: ''
 tag: ''
 base_table: opigno_notification
 base_field: id
-core: 8.x
 display:
   default:
     display_plugin: default
@@ -271,7 +268,7 @@ display:
             alter_text: true
             text: '<div class="notification" data-id="{{ id }}" data-read="{{ has_read }}><a href="{{ url }}">{{ message }}</a></div>'
             make_link: false
-            path: '#'
+            path: /notifications
             absolute: false
             external: false
             replace_spaces: false
@@ -447,6 +444,8 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -778,6 +777,8 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -840,7 +841,7 @@ display:
           admin_label: ''
           empty: false
           tokenize: true
-          content: "<a class=\"see-more primary text-center\" href=\"/notifications\">\n<span>{{ 'see more'|t }}</span>\n</a>"
+          content: "<a class=\"see-more primary text-center\" href=\"{{ url('<front>') }}/notifications\">\r\n<span>{{ 'see more'|t }}</span>\r\n</a>"
           plugin_id: text_custom
     cache_metadata:
       max-age: -1

@@ -1,4 +1,4 @@
-uuid: b5bece23-b5cd-4f15-8044-1a8ba7c99f29
+uuid: null
 langcode: en
 status: true
 dependencies:
@@ -7,8 +7,6 @@ dependencies:
   module:
     - group
     - user
-_core:
-  default_config_hash: CLI8DzNjTnn2rPFTwy6tRyiEOUG0dqFEAK5Pj_hbAL0
 id: opigno_classes
 label: 'Opigno classes'
 module: views
@@ -16,7 +14,6 @@ description: ''
 tag: ''
 base_table: groups_field_data
 base_field: id
-core: 8.x
 display:
   default:
     display_plugin: default
@@ -27,7 +24,7 @@ display:
       access:
         type: perm
         options:
-          perm: 'create opigno_class group'
+          perm: 'access content'
       cache:
         type: tag
         options: {  }
@@ -394,6 +391,9 @@ display:
           entity_type: group
           entity_field: type
           plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
       sorts:
         id:
           id: id

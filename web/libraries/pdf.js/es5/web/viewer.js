@@ -590,36 +590,36 @@ var PDFViewerApplication = {
             case 5:
               hashParams = (0, _ui_utils.parseQueryString)(hash), waitOn = [];
 
-              if ("disableworker" in hashParams && hashParams["disableworker"] === "true") {
+              if ("disableworker" in hashParams && hashParams.disableworker === "true") {
                 waitOn.push(loadFakeWorker());
               }
 
               if ("disablerange" in hashParams) {
-                _app_options.AppOptions.set("disableRange", hashParams["disablerange"] === "true");
+                _app_options.AppOptions.set("disableRange", hashParams.disablerange === "true");
               }
 
               if ("disablestream" in hashParams) {
-                _app_options.AppOptions.set("disableStream", hashParams["disablestream"] === "true");
+                _app_options.AppOptions.set("disableStream", hashParams.disablestream === "true");
               }
 
               if ("disableautofetch" in hashParams) {
-                _app_options.AppOptions.set("disableAutoFetch", hashParams["disableautofetch"] === "true");
+                _app_options.AppOptions.set("disableAutoFetch", hashParams.disableautofetch === "true");
               }
 
               if ("disablefontface" in hashParams) {
-                _app_options.AppOptions.set("disableFontFace", hashParams["disablefontface"] === "true");
+                _app_options.AppOptions.set("disableFontFace", hashParams.disablefontface === "true");
               }
 
               if ("disablehistory" in hashParams) {
-                _app_options.AppOptions.set("disableHistory", hashParams["disablehistory"] === "true");
+                _app_options.AppOptions.set("disableHistory", hashParams.disablehistory === "true");
               }
 
               if ("webgl" in hashParams) {
-                _app_options.AppOptions.set("enableWebGL", hashParams["webgl"] === "true");
+                _app_options.AppOptions.set("enableWebGL", hashParams.webgl === "true");
               }
 
               if ("verbosity" in hashParams) {
-                _app_options.AppOptions.set("verbosity", hashParams["verbosity"] | 0);
+                _app_options.AppOptions.set("verbosity", hashParams.verbosity | 0);
               }
 
               if (!("textlayer" in hashParams)) {
@@ -627,7 +627,7 @@ var PDFViewerApplication = {
                 break;
               }
 
-              _context3.t0 = hashParams["textlayer"];
+              _context3.t0 = hashParams.textlayer;
               _context3.next = _context3.t0 === "off" ? 18 : _context3.t0 === "visible" ? 20 : _context3.t0 === "shadow" ? 20 : _context3.t0 === "hover" ? 20 : 23;
               break;
 
@@ -638,7 +638,7 @@ var PDFViewerApplication = {
 
             case 20:
               viewer = _this3.appConfig.viewerContainer;
-              viewer.classList.add("textLayer-" + hashParams["textlayer"]);
+              viewer.classList.add("textLayer-" + hashParams.textlayer);
               return _context3.abrupt("break", 23);
 
             case 23:
@@ -647,12 +647,12 @@ var PDFViewerApplication = {
 
                 _app_options.AppOptions.set("fontExtraProperties", true);
 
-                enabled = hashParams["pdfbug"].split(",");
+                enabled = hashParams.pdfbug.split(",");
                 waitOn.push(loadAndEnablePDFBug(enabled));
               }
 
               if ("locale" in hashParams) {
-                _app_options.AppOptions.set("locale", hashParams["locale"]);
+                _app_options.AppOptions.set("locale", hashParams.locale);
               }
 
               return _context3.abrupt("return", Promise.all(waitOn)["catch"](function (reason) {
@@ -1253,7 +1253,7 @@ var PDFViewerApplication = {
 
     if (percent > this.loadingBar.percent || isNaN(percent)) {
       this.loadingBar.percent = percent;
-      var disableAutoFetch = this.pdfDocument ? this.pdfDocument.loadingParams["disableAutoFetch"] : _app_options.AppOptions.get("disableAutoFetch");
+      var disableAutoFetch = this.pdfDocument ? this.pdfDocument.loadingParams.disableAutoFetch : _app_options.AppOptions.get("disableAutoFetch");
 
       if (disableAutoFetch && percent) {
         if (this.disableAutoFetchLoadingBarTimeout) {
@@ -1598,7 +1598,7 @@ var PDFViewerApplication = {
               _this12.metadata = metadata;
               _this12.contentDispositionFilename = contentDispositionFilename;
               console.log("PDF ".concat(pdfDocument.fingerprint, " [").concat(info.PDFFormatVersion, " ") + "".concat((info.Producer || "-").trim(), " / ").concat((info.Creator || "-").trim(), "] ") + "(PDF.js: ".concat(_pdfjsLib.version || "-") + "".concat(_this12.pdfViewer.enableWebGL ? " [WebGL]" : "", ")"));
-              infoTitle = info && info["Title"];
+              infoTitle = info && info.Title;
 
               if (infoTitle) {
                 pdfTitle = infoTitle;
@@ -6482,7 +6482,7 @@ var PDFDocumentProperties = /*#__PURE__*/function () {
         var currentPageNumber = _this2._currentPageNumber;
         var pagesRotation = _this2._pagesRotation;
 
-        if (_this2.fieldData && currentPageNumber === _this2.fieldData["_currentPageNumber"] && pagesRotation === _this2.fieldData["_pagesRotation"]) {
+        if (_this2.fieldData && currentPageNumber === _this2.fieldData._currentPageNumber && pagesRotation === _this2.fieldData._pagesRotation) {
           _this2._updateUI();
 
           return;
@@ -6533,12 +6533,12 @@ var PDFDocumentProperties = /*#__PURE__*/function () {
           _this2.maybeFileSize = length;
           return _this2._parseFileSize(length);
         }).then(function (fileSize) {
-          if (fileSize === _this2.fieldData["fileSize"]) {
+          if (fileSize === _this2.fieldData.fileSize) {
             return;
           }
 
           var data = Object.assign(Object.create(null), _this2.fieldData);
-          data["fileSize"] = fileSize;
+          data.fileSize = fileSize;
           freezeFieldData(data);
 
           _this2._updateUI();
@@ -8708,8 +8708,8 @@ var PDFLinkService = /*#__PURE__*/function () {
         if ("search" in params) {
           this.eventBus.dispatch("findfromurlhash", {
             source: this,
-            query: params["search"].replace(/"/g, ""),
-            phraseSearch: params["phrase"] === "true"
+            query: params.search.replace(/"/g, ""),
+            phraseSearch: params.phrase === "true"
           });
         }
 
@@ -10650,6 +10650,10 @@ function _get(target, property, receiver) { if (typeof Reflect !== "undefined" &
 
 function _superPropBase(object, property) { while (!Object.prototype.hasOwnProperty.call(object, property)) { object = _getPrototypeOf(object); if (object === null) break; } return object; }
 
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
@@ -10659,10 +10663,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 var PDFViewer = /*#__PURE__*/function (_BaseViewer) {
   _inherits(PDFViewer, _BaseViewer);
@@ -11051,7 +11051,7 @@ var BaseViewer = /*#__PURE__*/function () {
             _this2.findController.setDocument(pdfDocument);
           }
 
-          if (pdfDocument.loadingParams["disableAutoFetch"] || pagesCount > 7500) {
+          if (pdfDocument.loadingParams.disableAutoFetch || pagesCount > 7500) {
             _this2._pagesCapability.resolve();
 
             return;
@@ -13583,6 +13583,10 @@ function _get(target, property, receiver) { if (typeof Reflect !== "undefined" &
 
 function _superPropBase(object, property) { while (!Object.prototype.hasOwnProperty.call(object, property)) { object = _getPrototypeOf(object); if (object === null) break; } return object; }
 
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
@@ -13592,10 +13596,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 var PDFSinglePageViewer = /*#__PURE__*/function (_BaseViewer) {
   _inherits(PDFSinglePageViewer, _BaseViewer);
@@ -14382,6 +14382,10 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
@@ -14391,10 +14395,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 ;
 var GenericCom = {};
@@ -15992,7 +15992,7 @@ function PDFPrintService(pdfDocument, pagesOverview, printContainer, l10n) {
   this.pagesOverview = pagesOverview;
   this.printContainer = printContainer;
   this.l10n = l10n || _ui_utils.NullL10n;
-  this.disableCreateObjectURL = pdfDocument.loadingParams["disableCreateObjectURL"];
+  this.disableCreateObjectURL = pdfDocument.loadingParams.disableCreateObjectURL;
   this.currentPage = -1;
   this.scratchCanvas = document.createElement("canvas");
 }

@@ -6,6 +6,7 @@ dependencies:
     - field.field.media.tft_file.opigno_moxtra_recording_link
     - field.field.media.tft_file.tft_file
     - field.field.media.tft_file.tft_folder
+    - field.field.media.tft_file.tft_members
     - media.type.tft_file
   module:
     - file
@@ -64,7 +65,9 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     region: content
     third_party_settings: {  }
 hidden:
   opigno_moxtra_recording_link: true
+  tft_members: true

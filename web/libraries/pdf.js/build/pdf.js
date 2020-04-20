@@ -123,8 +123,8 @@ return /******/ (function(modules) { // webpackBootstrap
 "use strict";
 
 
-var pdfjsVersion = '2.5.95';
-var pdfjsBuild = 'c218e94f';
+var pdfjsVersion = '2.5.106';
+var pdfjsBuild = '49f59eb6';
 
 var pdfjsSharedUtil = __w_pdfjs_require__(1);
 
@@ -1247,7 +1247,7 @@ function _fetchDocument(worker, source, pdfDataRangeTransport, docId) {
 
   return worker.messageHandler.sendWithPromise("GetDocRequest", {
     docId,
-    apiVersion: '2.5.95',
+    apiVersion: '2.5.106',
     source: {
       data: source.data,
       url: source.url,
@@ -3210,9 +3210,9 @@ const InternalRenderTask = function InternalRenderTaskClosure() {
   return InternalRenderTask;
 }();
 
-const version = '2.5.95';
+const version = '2.5.106';
 exports.version = version;
-const build = 'c218e94f';
+const build = '49f59eb6';
 exports.build = build;
 
 /***/ }),
@@ -4154,7 +4154,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.isNodeJS = void 0;
-const isNodeJS = typeof process === "object" && process + "" === "[object process]" && !process.versions["nw"] && !process.versions["electron"];
+const isNodeJS = typeof process === "object" && process + "" === "[object process]" && !process.versions.nw && !process.versions.electron;
 exports.isNodeJS = isNodeJS;
 
 /***/ }),
@@ -11015,6 +11015,7 @@ exports.SVGGraphics = SVGGraphics;
       current.x = current.lineX = 0;
       current.y = current.lineY = 0;
       current.xcoords = [];
+      current.ycoords = [];
       current.tspan = this.svgFactory.createElement("svg:tspan");
       current.tspan.setAttributeNS(null, "font-family", current.fontFamily);
       current.tspan.setAttributeNS(null, "font-size", `${pf(current.fontSize)}px`);
@@ -11034,6 +11035,7 @@ exports.SVGGraphics = SVGGraphics;
       current.txtElement = this.svgFactory.createElement("svg:text");
       current.txtgrp = this.svgFactory.createElement("svg:g");
       current.xcoords = [];
+      current.ycoords = [];
     }
 
     moveText(x, y) {
@@ -11041,6 +11043,7 @@ exports.SVGGraphics = SVGGraphics;
       current.x = current.lineX += x;
       current.y = current.lineY += y;
       current.xcoords = [];
+      current.ycoords = [];
       current.tspan = this.svgFactory.createElement("svg:tspan");
       current.tspan.setAttributeNS(null, "font-family", current.fontFamily);
       current.tspan.setAttributeNS(null, "font-size", `${pf(current.fontSize)}px`);
@@ -11056,11 +11059,14 @@ exports.SVGGraphics = SVGGraphics;
         return;
       }
 
+      const fontSizeScale = current.fontSizeScale;
       const charSpacing = current.charSpacing;
       const wordSpacing = current.wordSpacing;
       const fontDirection = current.fontDirection;
       const textHScale = current.textHScale * fontDirection;
       const vertical = font.vertical;
+      const spacingDir = vertical ? 1 : -1;
+      const defaultVMetrics = font.defaultVMetrics;
       const widthAdvanceScale = fontSize * current.fontMatrix[0];
       let x = 0;
 
@@ -11069,33 +11075,64 @@ exports.SVGGraphics = SVGGraphics;
           x += fontDirection * wordSpacing;
           continue;
         } else if ((0, _util.isNum)(glyph)) {
-          x += -glyph * fontSize * 0.001;
+          x += spacingDir * glyph * fontSize / 1000;
           continue;
         }
 
-        const width = glyph.width;
-        const character = glyph.fontChar;
         const spacing = (glyph.isSpace ? wordSpacing : 0) + charSpacing;
-        const charWidth = width * widthAdvanceScale + spacing * fontDirection;
+        const character = glyph.fontChar;
+        let scaledX, scaledY;
+        let width = glyph.width;
 
-        if (!glyph.isInFont && !font.missingFile) {
-          x += charWidth;
-          continue;
+        if (vertical) {
+          let vx;
+          const vmetric = glyph.vmetric || defaultVMetrics;
+          vx = glyph.vmetric ? vmetric[1] : width * 0.5;
+          vx = -vx * widthAdvanceScale;
+          const vy = vmetric[2] * widthAdvanceScale;
+          width = vmetric ? -vmetric[0] : width;
+          scaledX = vx / fontSizeScale;
+          scaledY = (x + vy) / fontSizeScale;
+        } else {
+          scaledX = x / fontSizeScale;
+          scaledY = 0;
         }
 
-        current.xcoords.push(current.x + x);
-        current.tspan.textContent += character;
+        if (glyph.isInFont || font.missingFile) {
+          current.xcoords.push(current.x + scaledX);
+
+          if (vertical) {
+            current.ycoords.push(-current.y + scaledY);
+          }
+
+          current.tspan.textContent += character;
+        } else {}
+
+        let charWidth;
+
+        if (vertical) {
+          charWidth = width * widthAdvanceScale - spacing * fontDirection;
+        } else {
+          charWidth = width * widthAdvanceScale + spacing * fontDirection;
+        }
+
         x += charWidth;
       }
 
+      current.tspan.setAttributeNS(null, "x", current.xcoords.map(pf).join(" "));
+
       if (vertical) {
-        current.y -= x * textHScale;
+        current.tspan.setAttributeNS(null, "y", current.ycoords.map(pf).join(" "));
+      } else {
+        current.tspan.setAttributeNS(null, "y", pf(-current.y));
+      }
+
+      if (vertical) {
+        current.y -= x;
       } else {
         current.x += x * textHScale;
       }
 
-      current.tspan.setAttributeNS(null, "x", current.xcoords.map(pf).join(" "));
-      current.tspan.setAttributeNS(null, "y", pf(-current.y));
       current.tspan.setAttributeNS(null, "font-family", current.fontFamily);
       current.tspan.setAttributeNS(null, "font-size", `${pf(current.fontSize)}px`);
 
@@ -11196,6 +11233,7 @@ exports.SVGGraphics = SVGGraphics;
       current.tspan = this.svgFactory.createElement("svg:tspan");
       current.tspan.setAttributeNS(null, "y", pf(-current.y));
       current.xcoords = [];
+      current.ycoords = [];
     }
 
     endText() {
@@ -11242,6 +11280,7 @@ exports.SVGGraphics = SVGGraphics;
       this.current.fillColor = _util.Util.makeCssRgb(r, g, b);
       this.current.tspan = this.svgFactory.createElement("svg:tspan");
       this.current.xcoords = [];
+      this.current.ycoords = [];
     }
 
     setStrokeColorN(args) {
@@ -12214,7 +12253,7 @@ class PDFNodeStreamRangeReader extends BaseRangeReader {
       this._httpHeaders[property] = value;
     }
 
-    this._httpHeaders["Range"] = `bytes=${start}-${end - 1}`;
+    this._httpHeaders.Range = `bytes=${start}-${end - 1}`;
 
     const handleResponse = response => {
       if (response.statusCode === 404) {
