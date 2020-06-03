@@ -1,6 +1,9 @@
+uuid: 27f45c3b-5dfa-44e0-b425-6e65bdc3118e
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
 id: anonymous
 label: 'Anonymous user'
 weight: -10
@@ -9,10 +12,8 @@ permissions:
   - 'access comments'
   - 'access content'
   - 'access site-wide contact form'
+  - 'opigno dashboard layout access'
   - 'search content'
   - 'take modules'
   - 'use text format restricted_html'
   - 'view media'
-_core:
-  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
-uuid: 27f45c3b-5dfa-44e0-b425-6e65bdc3118e

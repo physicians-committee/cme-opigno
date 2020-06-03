@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.user.pm_thread_preview
     - field.field.user.user.field_created_by
+    - field.field.user.user.field_profession
     - field.field.user.user.user_picture
   module:
     - user
@@ -25,6 +26,7 @@ hidden:
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
   field_created_by: true
+  field_profession: true
   member_for: true
   private_message_link: true
   user_picture: true

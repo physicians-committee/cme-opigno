@@ -43,6 +43,7 @@ third_party_settings:
           position_vertical: center
         extra_css: ''
       label: 'Customize calendar item'
+      region: content
 _core:
   default_config_hash: l0FwlZ6xlJip9ppej7sbUeKV5U_rurdhvwei-U0V8vc
 id: opigno_calendar_event.opigno_calendar_event.embedded_widget

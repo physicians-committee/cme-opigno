@@ -1,0 +1,42 @@
+uuid: 37a7e7ea-b933-42cb-b171-32bea7c8387b
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_profession
+field_name: field_profession
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: dietitian
+      label: Dietitian
+    -
+      value: pharmacist
+      label: Pharmacist
+    -
+      value: physician
+      label: Physician
+    -
+      value: 'nurse practitioner'
+      label: 'Nurse Practitioner'
+    -
+      value: nurse
+      label: Nurse
+    -
+      value: 'physician asst.'
+      label: 'Physician Asst.'
+    -
+      value: other
+      label: Other
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
