@@ -114,6 +114,7 @@ module:
   tour: 0
   update: 0
   user: 0
+  userprotect: 0
   video: 0
   view_mode_selector: 0
   views_role_based_global_text: 0

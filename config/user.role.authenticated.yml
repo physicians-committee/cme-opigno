@@ -1,4 +1,4 @@
-config_rewrite: replace
+uuid: null
 langcode: en
 status: true
 dependencies: {  }
