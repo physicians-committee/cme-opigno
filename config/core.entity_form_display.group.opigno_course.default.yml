@@ -31,6 +31,7 @@ third_party_settings:
         open: true
         required_fields: true
       label: 'Badges settings'
+      region: content
     group_badges_params:
       children:
         - badge_name
@@ -47,6 +48,7 @@ third_party_settings:
         id: edit-opigno-badges-settings-group
         classes: ''
       label: 'Badge params'
+      region: content
 _core:
   default_config_hash: UFTqsuMPrlmDUJSHe9GYLO6rATcZTnyGCctzUwvRWiI
 id: group.opigno_course.default

@@ -10,5 +10,6 @@ weight: -8
 is_admin: null
 permissions:
   - 'add workspace entities'
+  - 'opigno dashboard layout access'
   - 'view meeting entities'
   - 'view workspace entities'

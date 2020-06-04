@@ -6,6 +6,8 @@ dependencies:
     - core.entity_view_mode.group.teaser_of_group
     - field.field.group.learning_path.field_anonymous_visibility
     - field.field.group.learning_path.field_certificate
+    - field.field.group.learning_path.field_certificate_expire
+    - field.field.group.learning_path.field_certificate_expire_results
     - field.field.group.learning_path.field_guided_navigation
     - field.field.group.learning_path.field_learning_path_category
     - field.field.group.learning_path.field_learning_path_description
@@ -93,6 +95,8 @@ hidden:
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
   field_anonymous_visibility: true
+  field_certificate_expire: true
+  field_certificate_expire_results: true
   field_guided_navigation: true
   field_learning_path_enable_forum: true
   field_learning_path_forum: true
@@ -102,4 +106,5 @@ hidden:
   field_required_trainings: true
   field_requires_validation: true
   field_workspace: true
+  search_api_excerpt: true
   uid: true

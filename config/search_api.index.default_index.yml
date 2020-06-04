@@ -10,6 +10,7 @@ dependencies:
   config:
     - field.storage.group.field_learning_path_description
     - search_api.server.default_server
+    - core.entity_view_mode.group.teaser_of_group
     - core.entity_view_mode.node.search_index
 id: default_index
 name: 'Default content index'
@@ -24,7 +25,6 @@ field_settings:
     dependencies:
       module:
         - node
-        - user
         - user
   changed:
     label: Changed
@@ -144,16 +144,24 @@ datasource_settings:
       default: true
       selected: {  }
 processor_settings:
-  add_url:
+  tokenizer:
+    all_fields: false
+    fields:
+      - rendered_item
+      - title
+    spaces: ''
+    overlap_cjk: 1
+    minimum_word_size: '3'
     weights:
-      preprocess_index: -30
-  aggregated_field:
-    weights:
-      add_properties: 20
+      preprocess_index: -2
+      preprocess_query: -5
   content_access:
     weights:
       preprocess_index: -6
       preprocess_query: -4
+  aggregated_field:
+    weights:
+      add_properties: 20
   entity_status:
     weights:
       preprocess_index: -10
@@ -185,22 +193,14 @@ processor_settings:
     weights:
       preprocess_index: -3
       preprocess_query: -6
-  ignorecase:
-    all_fields: true
+  transliteration:
+    all_fields: false
     fields:
-      - author
-      - field_learning_path_description
-      - label
       - rendered_item
       - title
-      - type
     weights:
-      preprocess_index: -5
-      preprocess_query: -8
-  rendered_item:
-    weights:
-      add_properties: 0
-      pre_index_save: -10
+      preprocess_index: -4
+      preprocess_query: -7
   stopwords:
     all_fields: false
     fields:
@@ -245,25 +245,26 @@ processor_settings:
     weights:
       preprocess_index: -5
       preprocess_query: -10
-  tokenizer:
-    all_fields: false
+  language_with_fallback: {  }
+  add_url:
+    weights:
+      preprocess_index: -30
+  rendered_item:
+    weights:
+      add_properties: 0
+      pre_index_save: -10
+  ignorecase:
+    all_fields: true
     fields:
+      - author
+      - field_learning_path_description
+      - label
       - rendered_item
       - title
-    spaces: ''
-    overlap_cjk: 1
-    minimum_word_size: '3'
+      - type
     weights:
-      preprocess_index: -2
-      preprocess_query: -5
-  transliteration:
-    all_fields: false
-    fields:
-      - rendered_item
-      - title
-    weights:
-      preprocess_index: -4
-      preprocess_query: -7
+      preprocess_index: -5
+      preprocess_query: -8
 tracker_settings:
   default:
     indexing_order: fifo

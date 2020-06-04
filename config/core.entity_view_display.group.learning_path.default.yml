@@ -1,15 +1,14 @@
-uuid: 09f65e65-8a16-4746-b6fa-0f48fe286010
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.group.learning_path.field_anonymous_visibility
     - field.field.group.learning_path.field_certificate
-    - field.field.group.learning_path.field_guided_navigation
+    - field.field.group.learning_path.field_certificate_expire
+    - field.field.group.learning_path.field_certificate_expire_results
     - field.field.group.learning_path.field_learning_path_category
     - field.field.group.learning_path.field_learning_path_description
     - field.field.group.learning_path.field_learning_path_duration
-    - field.field.group.learning_path.field_learning_path_enable_forum
     - field.field.group.learning_path.field_learning_path_folder
     - field.field.group.learning_path.field_learning_path_media_image
     - field.field.group.learning_path.field_learning_path_published
@@ -20,8 +19,6 @@ dependencies:
   module:
     - media
     - text
-_core:
-  default_config_hash: Vh3K9l6q2sP2brfKoykXduqFHBOZFURsVntzqPK_APU
 id: group.learning_path.default
 targetEntityType: group
 bundle: learning_path
@@ -59,7 +56,8 @@ hidden:
   entity_print_view_word_docx: true
   field_anonymous_visibility: true
   field_certificate: true
-  field_guided_navigation: true
+  field_certificate_expire: true
+  field_certificate_expire_results: true
   field_learning_path_category: true
   field_learning_path_duration: true
   field_learning_path_enable_forum: true

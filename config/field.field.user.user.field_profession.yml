@@ -1,0 +1,21 @@
+uuid: e4bc11d8-c1c7-4564-bf91-0caf41dc3155
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_profession
+  module:
+    - options
+    - user
+id: user.user.field_profession
+field_name: field_profession
+entity_type: user
+bundle: user
+label: Profession
+description: 'Certificates are awarded based on the profession selected. Please select a profession to get the correct certificate.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

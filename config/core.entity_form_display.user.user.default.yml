@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.user.user.field_created_by
+    - field.field.user.user.field_profession
     - field.field.user.user.user_picture
     - image.style.medium
   module:
@@ -26,6 +27,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_profession:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   language:
     weight: 2
     region: content
