@@ -1,0 +1,17 @@
+uuid: 5ffb9af2-a3f7-4769-9c3d-9659b1b909d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.opigno_class
+  enforced:
+    config:
+      - user.role.content_editor
+id: opigno_class-111523d41
+label: 'Content Editor'
+weight: 3
+internal: true
+audience: outsider
+group_type: opigno_class
+permissions_ui: false
+permissions: {  }

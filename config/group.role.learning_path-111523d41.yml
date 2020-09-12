@@ -1,0 +1,17 @@
+uuid: dfb17e28-6673-4f16-be22-5bc2b45f8ad7
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.learning_path
+  enforced:
+    config:
+      - user.role.content_editor
+id: learning_path-111523d41
+label: 'Content Editor'
+weight: 3
+internal: true
+audience: outsider
+group_type: learning_path
+permissions_ui: false
+permissions: {  }

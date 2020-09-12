@@ -1,0 +1,17 @@
+uuid: 7d9af6d6-ce44-4e32-b87f-94ec52c28461
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.opigno_course
+  enforced:
+    config:
+      - user.role.content_editor
+id: opigno_course-111523d41
+label: 'Content Editor'
+weight: 3
+internal: true
+audience: outsider
+group_type: opigno_course
+permissions_ui: false
+permissions: {  }
