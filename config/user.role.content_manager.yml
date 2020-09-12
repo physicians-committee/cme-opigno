@@ -1,9 +1,6 @@
-uuid: 42374ef2-5a2e-4a30-a074-c1c9706f7fe4
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: fYV21tm7lBc8ybWhQlvDWg48A62MJh9kfq52P2pqyKQ
 id: content_manager
 label: 'Content manager'
 weight: -5
@@ -35,7 +32,6 @@ permissions:
   - 'create opigno_course group'
   - 'create pdf_file media'
   - 'create terms in learning_path_category'
-  - 'create terms in skills'
   - 'create terms in tags'
   - 'create terms in tft_tree'
   - 'create tft_file media'
@@ -53,7 +49,6 @@ permissions:
   - 'delete own pdf_file media'
   - 'delete own tft_file media'
   - 'delete terms in learning_path_category'
-  - 'delete terms in skills'
   - 'delete terms in tags'
   - 'delete terms in tft_tree'
   - 'delete user module status entities'
@@ -69,7 +64,6 @@ permissions:
   - 'edit own pdf_file media'
   - 'edit own tft_file media'
   - 'edit terms in learning_path_category'
-  - 'edit terms in skills'
   - 'edit terms in tags'
   - 'edit terms in tft_tree'
   - 'edit user module status entities'
@@ -77,9 +71,7 @@ permissions:
   - 'manage group content in any group'
   - 'message all groups'
   - 'message anyone regardless of groups'
-  - 'opigno dashboard layout access'
   - 'revert all answer revisions'
-  - 'start meeting'
   - 'tft access file tree'
   - 'tft add a file to any term'
   - 'tft add child terms'
@@ -88,6 +80,7 @@ permissions:
   - 'tft reorder terms'
   - 'update any media'
   - 'update media'
+  - 'use text format opigno_certificate_wysiwyg'
   - 'view all answer revisions'
   - 'view published activity entities'
   - 'view published answer entities'

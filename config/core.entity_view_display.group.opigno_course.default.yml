@@ -1,4 +1,3 @@
-uuid: f300ea23-3124-4b95-86eb-26fd241da7f4
 langcode: en
 status: true
 dependencies:
@@ -11,11 +10,10 @@ dependencies:
     - field.field.group.opigno_course.field_course_description
     - field.field.group.opigno_course.field_course_media_image
     - group.type.opigno_course
+    - image.style.catalog_thumbnail
   module:
     - media
     - text
-_core:
-  default_config_hash: FlrJWOGGZpfLJbAqXjbbQwjpSC0bESBwDMH2NkPQePY
 id: group.opigno_course.default
 targetEntityType: group
 bundle: opigno_course
@@ -33,7 +31,7 @@ content:
     weight: 2
     label: hidden
     settings:
-      image_style: ''
+      image_style: catalog_thumbnail
       image_link: ''
     third_party_settings: {  }
     region: content
@@ -56,4 +54,6 @@ hidden:
   entity_print_view_epub: true
   entity_print_view_pdf: true
   entity_print_view_word_docx: true
+  langcode: true
+  search_api_excerpt: true
   uid: true

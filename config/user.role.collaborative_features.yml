@@ -1,15 +1,11 @@
-uuid: b502ad94-57ae-42a1-b2f2-63c547364e3a
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: iZqM_hvOfpDdJOniNxwbLUBUUT7vJFGJzpcx9SNGl5M
 id: collaborative_features
-label: 'Collaborative features'
+label: 'Live meeting manager'
 weight: -8
 is_admin: null
 permissions:
   - 'add workspace entities'
-  - 'opigno dashboard layout access'
   - 'view meeting entities'
   - 'view workspace entities'

@@ -10,7 +10,7 @@ dependencies:
 _core:
   default_config_hash: oS6TURi4z5WSENkmNgmfQh9KJBSi-IG_8Rv1BmNddjY
 id: opigno_course-1eb7047a7
-label: 'Content manager'
+label: 'Course Administrator'
 weight: 3
 internal: true
 audience: outsider

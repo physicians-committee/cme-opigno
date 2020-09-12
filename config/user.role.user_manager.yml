@@ -7,6 +7,7 @@ label: 'User manager'
 weight: -6
 is_admin: null
 permissions:
+  - 'access contextual links'
   - 'access media_entity_browser_groups entity browser pages'
   - 'access users overview'
   - 'administer users'

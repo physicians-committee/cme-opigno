@@ -10,7 +10,7 @@ dependencies:
 _core:
   default_config_hash: 89sxMESSVZViM_rVp9lb9nVt-hnnXnS00hnV89mChOE
 id: learning_path-1eb7047a7
-label: 'Content manager'
+label: 'Course Administrator'
 weight: 3
 internal: true
 audience: outsider
