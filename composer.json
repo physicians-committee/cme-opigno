@@ -11,6 +11,19 @@
         {
             "type": "package",
             "package" : {
+                "name" : "almende/vis",
+                "version" : "v4.21.0",
+                "type" : "drupal-library",
+                "source" : {
+                    "url" : "https://github.com/almende/vis.git",
+                    "type" : "git",
+                    "reference" : "v4.21.0"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package" : {
                 "name" : "enyo/dropzone",
                 "version" : "v5.5.0",
                 "type" : "drupal-library",
@@ -30,19 +43,6 @@
                 "dist": {
                     "url": "https://github.com/mozilla/pdf.js/releases/download/v2.4.456/pdfjs-2.4.456-es5-dist.zip",
                     "type": "zip"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package" : {
-                "name" : "almende/vis",
-                "version" : "v4.21.0",
-                "type" : "drupal-library",
-                "source" : {
-                    "url" : "https://github.com/almende/vis.git",
-                    "type" : "git",
-                    "reference" : "v4.21.0"
                 }
             }
         },
@@ -117,7 +117,6 @@
     "scripts": {
         "build-assets": [
             "@prepare-for-pantheon",
-            "composer clear-cache",
             "composer install --optimize-autoloader --no-dev"
         ],
         "lint": "find web/modules/custom web/themes/custom -name '*.php' -exec php -l {} \\;",
