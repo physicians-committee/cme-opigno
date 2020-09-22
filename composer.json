@@ -14,7 +14,7 @@
                 "name" : "enyo/dropzone",
                 "version" : "v5.5.0",
                 "type" : "drupal-library",
-                "source" : {
+                "dist" : {
                     "url" : "https://github.com/enyo/dropzone/archive/v5.5.0.zip",
                     "type" : "zip"
                 }
@@ -38,7 +38,7 @@
                 "name" : "almende/vis",
                 "version" : "v4.21.0",
                 "type" : "drupal-library",
-                "source" : {
+                "dist" : {
                     "url" : "https://github.com/almende/vis/archive/v4.21.0.zip",
                     "type" : "zip"
                 }
@@ -59,7 +59,6 @@
     ],
     "require": {
         "php": ">=7.1.0",
-        "almende/vis": "4.21.0",
         "composer/installers": "^1.7",
         "cweagans/composer-patches": "^1.6",
         "drupal/calendar": "1.x-dev#1824fdc",
