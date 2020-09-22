@@ -15,9 +15,8 @@
                 "version" : "v5.5.0",
                 "type" : "drupal-library",
                 "source" : {
-                    "url" : "https://github.com/enyo/dropzone.git",
-                    "type" : "git",
-                    "reference" : "v5.5.0"
+                    "url" : "https://github.com/enyo/dropzone/archive/v5.5.0.zip",
+                    "type" : "zip"
                 }
             }
         },
@@ -40,9 +39,8 @@
                 "version" : "v4.21.0",
                 "type" : "drupal-library",
                 "source" : {
-                    "url" : "https://github.com/almende/vis.git",
-                    "type" : "git",
-                    "reference" : "v4.21.0"
+                    "url" : "https://github.com/almende/vis/archive/v4.21.0.zip",
+                    "type" : "zip"
                 }
             }
         },
@@ -50,7 +48,7 @@
             "type": "package",
             "package": {
                 "name": "kenwheeler/slick",
-                "version": "1.8.1",
+                "version": "v1.8.1",
                 "type": "drupal-library",
                 "dist": {
                     "url": "https://github.com/kenwheeler/slick/archive/v1.8.1.zip",
