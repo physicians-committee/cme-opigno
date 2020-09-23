@@ -6,16 +6,22 @@ dependencies:
     - field.field.group.learning_path.field_certificate
     - field.field.group.learning_path.field_certificate_expire
     - field.field.group.learning_path.field_certificate_expire_results
+    - field.field.group.learning_path.field_guided_navigation
     - field.field.group.learning_path.field_learning_path_category
     - field.field.group.learning_path.field_learning_path_description
     - field.field.group.learning_path.field_learning_path_duration
+    - field.field.group.learning_path.field_learning_path_enable_forum
     - field.field.group.learning_path.field_learning_path_folder
+    - field.field.group.learning_path.field_learning_path_forum
     - field.field.group.learning_path.field_learning_path_media_image
     - field.field.group.learning_path.field_learning_path_published
     - field.field.group.learning_path.field_learning_path_visibility
+    - field.field.group.learning_path.field_lp_price
     - field.field.group.learning_path.field_required_trainings
     - field.field.group.learning_path.field_requires_validation
+    - field.field.group.learning_path.field_workspace
     - group.type.learning_path
+    - image.style.catalog_thumbnail
   module:
     - media
     - text
@@ -36,7 +42,7 @@ content:
     weight: 2
     label: hidden
     settings:
-      image_style: ''
+      image_style: catalog_thumbnail
       image_link: ''
     third_party_settings: {  }
     region: content
@@ -58,6 +64,7 @@ hidden:
   field_certificate: true
   field_certificate_expire: true
   field_certificate_expire_results: true
+  field_guided_navigation: true
   field_learning_path_category: true
   field_learning_path_duration: true
   field_learning_path_enable_forum: true
@@ -69,4 +76,6 @@ hidden:
   field_required_trainings: true
   field_requires_validation: true
   field_workspace: true
+  langcode: true
+  search_api_excerpt: true
   uid: true

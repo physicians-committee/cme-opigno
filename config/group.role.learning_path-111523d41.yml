@@ -1,4 +1,4 @@
-uuid: 86ba1ddb-d42a-4c61-8b27-5aa7201dba7a
+uuid: dfb17e28-6673-4f16-be22-5bc2b45f8ad7
 langcode: en
 status: true
 dependencies:
@@ -6,11 +6,9 @@ dependencies:
     - group.type.learning_path
   enforced:
     config:
-      - user.role.content_manager
-_core:
-  default_config_hash: 89sxMESSVZViM_rVp9lb9nVt-hnnXnS00hnV89mChOE
-id: learning_path-1eb7047a7
-label: 'Course Administrator'
+      - user.role.content_editor
+id: learning_path-111523d41
+label: 'Content Editor'
 weight: 3
 internal: true
 audience: outsider

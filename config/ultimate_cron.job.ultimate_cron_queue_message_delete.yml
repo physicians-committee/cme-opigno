@@ -1,0 +1,20 @@
+uuid: 3b0340dd-83d4-4fc1-a4f7-e92e4a4244ed
+langcode: en
+status: true
+dependencies:
+  module:
+    - message
+title: 'Queue: Delete messages'
+id: ultimate_cron_queue_message_delete
+weight: 10
+module: message
+callback: 'ultimate_cron.queue_worker:queueCallback'
+scheduler:
+  id: simple
+  configuration:
+    rules:
+      - '* * * * *'
+launcher:
+  id: serial
+logger:
+  id: database

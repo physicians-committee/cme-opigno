@@ -1,4 +1,4 @@
-uuid: 38ce2b52-713c-48cf-997c-d3118c4ab4fa
+uuid: 7d9af6d6-ce44-4e32-b87f-94ec52c28461
 langcode: en
 status: true
 dependencies:
@@ -6,11 +6,9 @@ dependencies:
     - group.type.opigno_course
   enforced:
     config:
-      - user.role.content_manager
-_core:
-  default_config_hash: oS6TURi4z5WSENkmNgmfQh9KJBSi-IG_8Rv1BmNddjY
-id: opigno_course-1eb7047a7
-label: 'Course Administrator'
+      - user.role.content_editor
+id: opigno_course-111523d41
+label: 'Content Editor'
 weight: 3
 internal: true
 audience: outsider

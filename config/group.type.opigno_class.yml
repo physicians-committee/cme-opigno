@@ -1,13 +1,11 @@
-uuid: aca5ca04-44fc-4109-968c-82fea09d2cbe
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: AwMxRuw8wOWYD4r6-4Bv5nS9bNCS1AVd6v41jmLRxDY
+_core: {  }
 id: opigno_class
 label: Class
 description: 'A group of user. A class can be used in Opigno Learning Paths.'
-creator_membership: true
+creator_membership: false
 creator_wizard: false
 creator_roles:
   - opigno_class-admin
