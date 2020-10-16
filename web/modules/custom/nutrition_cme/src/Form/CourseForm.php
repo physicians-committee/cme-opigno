@@ -25,7 +25,7 @@ class CourseForm extends FormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form['course_name'] = [
       '#type' => 'textfield',
-      '#title' => t('Course Name:'),
+      '#title' => $this->t('Course Name:'),
       '#required' => TRUE,
     ];
     $form['actions']['#type'] = 'actions';
