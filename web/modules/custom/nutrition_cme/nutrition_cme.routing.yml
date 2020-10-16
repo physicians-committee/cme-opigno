@@ -2,6 +2,6 @@ course.form:
  path: '/course/addform'
  defaults:
    _title: 'Course add form'
-   _form: '\Drupal\resume\Form\CourseForm'
+   _form: '\Drupal\nutrition_cme\Form\CourseForm'
  requirements:
    _permission: 'access content'
