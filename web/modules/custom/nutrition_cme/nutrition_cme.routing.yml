@@ -1,0 +1,7 @@
+course.form:
+ path: '/course/addform'
+ defaults:
+   _title: 'Course add form'
+   _form: '\Drupal\resume\Form\CourseForm'
+ requirements:
+   _permission: 'access content'
