@@ -6,7 +6,6 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * @file
  * Contains \Drupal\nutrition_cme\Form\CourseForm.
  */
 class CourseForm extends FormBase {
