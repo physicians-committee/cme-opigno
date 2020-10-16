@@ -1,14 +1,16 @@
 <?php
-/**
- * @file
- * Contains \Drupal\nutrition_cme\Form\CourseForm.
- */
+
 namespace Drupal\nutrition_cme\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
+/**
+ * @file
+ * Contains \Drupal\nutrition_cme\Form\CourseForm.
+ */
 class CourseForm extends FormBase {
+
   /**
    * {@inheritdoc}
    */
@@ -20,17 +22,17 @@ class CourseForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $form['course_name'] = array(
+    $form['course_name'] = [
       '#type' => 'textfield',
       '#title' => t('Course Name:'),
       '#required' => TRUE,
-    );
+    ];
     $form['actions']['#type'] = 'actions';
-    $form['actions']['submit'] = array(
+    $form['actions']['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Save'),
       '#button_type' => 'primary',
-    );
+    ];
     return $form;
   }
 
@@ -51,4 +53,5 @@ class CourseForm extends FormBase {
       drupal_set_message($key . ': ' . $value);
     }
   }
+
 }
