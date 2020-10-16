@@ -7,7 +7,7 @@ use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Contains \Drupal\nutrition_cme\Form\CourseForm.
- * 
+ *
  * This class creates a form to input course information.
  */
 class CourseForm extends FormBase {
