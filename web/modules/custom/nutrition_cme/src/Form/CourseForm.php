@@ -4,6 +4,7 @@ namespace Drupal\nutrition_cme\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\group\Entity\Group;
 
 /**
  * Contains \Drupal\nutrition_cme\Form\CourseForm.
