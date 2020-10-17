@@ -52,8 +52,8 @@ class CourseForm extends FormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $course = Group::create(
       [
-        'type' => 'learning_path', 
-        'title' => $form_state->getValue('course_name')
+        'type' => 'learning_path',
+        'title' => $form_state->getValue('course_name'),
       ]
     );
     $course->save();
