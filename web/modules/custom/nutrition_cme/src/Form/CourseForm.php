@@ -50,6 +50,9 @@ class CourseForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
+    $course = \Drupal::entityTypeManager()->getStorage('group')->create(['type' => 'learning_path']);
+    $course->set('label', $form_state->getValue('course_name'));
+    $course->save();
     foreach ($form_state->getValues() as $key => $value) {
       drupal_set_message($key . ': ' . $value);
     }
