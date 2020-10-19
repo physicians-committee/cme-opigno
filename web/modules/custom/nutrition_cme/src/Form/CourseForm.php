@@ -54,7 +54,7 @@ class CourseForm extends FormBase {
     $course = Group::create(
       [
         'type' => 'learning_path',
-        'title' => $form_state->getValue('course_name'),
+        'label' => $form_state->getValue('course_name'),
       ]
     );
     $course->save();
