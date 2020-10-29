@@ -75,6 +75,7 @@
         "drupal/opigno_certificate": "^1.8",
         "drupal/pdf": "1.x-dev#1e33fbf",
         "drupal/private_message": "2.x-dev#0d76aa9",
+        "drupal/twig_tweak": "^2.8",
         "drupal/view_mode_selector": "1.x-dev#5d87d17",
         "drupal/views_role_based_global_text": "1.x-dev#026dc0e",
         "drush-ops/behat-drush-endpoint": "^9.3",
