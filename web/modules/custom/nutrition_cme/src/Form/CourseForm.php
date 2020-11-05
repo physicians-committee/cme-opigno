@@ -58,10 +58,9 @@ class CourseForm extends FormBase {
       ]
     );
     $course->save();
-    $module = entity_create('opigno_module', array(
-        'label' => $form_state->getValue('course_name') . ' Disclosure',
-      )
-    );
+    $module = entity_create('opigno_module', [
+      'label' => $form_state->getValue('course_name') . ' Disclosure'
+    ]);
     $module->save();
     $course->addContent($module, 'group_content_type_162f6c7e7c4fa');
   }
