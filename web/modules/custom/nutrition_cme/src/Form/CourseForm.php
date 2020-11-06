@@ -82,7 +82,7 @@ class CourseForm extends FormBase {
       'type' => 'opigno_slide',
       'name' => $form_state->getValue('course_name') . ' Disclosure',
     ]);
-    if (!empty($form_state->getValue('disclosure')) {
+    if (!empty($form_state->getValue('disclosure'))) {
       $activity->opigno_body->value = $form_state->getValue('disclosure');
       $activity->opigno_body->format = 'basic_html';
     }
