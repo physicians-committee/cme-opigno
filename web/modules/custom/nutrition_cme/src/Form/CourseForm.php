@@ -80,7 +80,7 @@ class CourseForm extends FormBase {
 
     $activity = OpignoActivity::create([
       'type' => 'opigno_slide',
-      'name' => $form_state->getValue('course_name') . ' Disclosure'
+      'name' => $form_state->getValue('course_name') . ' Disclosure',
     ]);
     if (!empty($form_state->getValue('disclosure')) {
       $activity->opigno_body->value = $form_state->getValue('disclosure');
