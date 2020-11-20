@@ -78,6 +78,16 @@ class CourseForm extends FormBase {
 
     $course->addContent($module, 'opigno_module_group');
 
+    $content = OpignoGroupManagedContent::createWithValues(
+      $course->id(),
+      'ContentTypeModule',
+      $module->id(),
+      0,
+      1
+    );
+
+    $content->save();
+
     $activity = OpignoActivity::create([
       'type' => 'opigno_slide',
       'name' => $form_state->getValue('course_name') . ' Disclosure',
