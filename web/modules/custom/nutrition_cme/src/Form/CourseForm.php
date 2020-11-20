@@ -5,6 +5,7 @@ namespace Drupal\nutrition_cme\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\group\Entity\Group;
+use Drupal\opigno_group_manager\Entity\OpignoGroupManagedContent;
 use Drupal\opigno_module\Entity\OpignoActivity;
 use Drupal\opigno_module\Entity\OpignoModule;
 
