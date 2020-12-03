@@ -37,6 +37,11 @@ class CourseForm extends FormBase {
       '#title' => $this->t('Disclosure:'),
       '#required' => FALSE,
     ];
+    $form['content'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Content:'),
+      '#required' => FALSE,
+    ];
     $form['actions']['#type'] = 'actions';
     $form['actions']['submit'] = [
       '#type' => 'submit',
@@ -56,6 +61,9 @@ class CourseForm extends FormBase {
     if (!preg_match('/^[a-zA-Z0-9 ]+$/i', $form_state->getValue('disclosure'))) {
       $form_state->setErrorByName('disclosure', $this->t('Disclosure must be alphanumeric.'));
     }
+    if (!preg_match('/^[a-zA-Z0-9 ]+$/i', $form_state->getValue('content'))) {
+      $form_state->setErrorByName('content', $this->t('Content must be alphanumeric.'));
+    }
   }
 
   /**
@@ -69,38 +77,85 @@ class CourseForm extends FormBase {
         'label' => $form_state->getValue('course_name'),
       ]
     );
+
     $course->save();
 
-    $module = OpignoModule::create([
+    $disclosure = OpignoModule::create([
       'type' => 'opigno_module',
       'name' => $form_state->getValue('course_name') . ' Disclosure',
     ]);
-    $module->save();
 
-    $course->addContent($module, 'opigno_module_group');
+    $disclosure->save();
 
-    $content = OpignoGroupManagedContent::createWithValues(
+    $course->addContent($disclosure, 'opigno_module_group');
+
+    $add_disclosure = OpignoGroupManagedContent::createWithValues(
       $course->id(),
       'ContentTypeModule',
-      $module->id(),
+      $disclosure->id(),
       0,
       1
     );
 
-    $content->save();
+    $add_disclosure->save();
 
-    $activity = OpignoActivity::create([
+    $disclosure_activity = OpignoActivity::create([
       'type' => 'opigno_slide',
       'name' => $form_state->getValue('course_name') . ' Disclosure',
     ]);
+
     if (!empty($form_state->getValue('disclosure'))) {
-      $activity->opigno_body->value = $form_state->getValue('disclosure');
-      $activity->opigno_body->format = 'basic_html';
+      $disclosure_activity->opigno_body->value = $form_state->getValue('disclosure');
+      $disclosure_activity->opigno_body->format = 'basic_html';
     }
-    $activity->save();
+    
+    $disclosure_activity->save();
 
     $opigno_module_obj = \Drupal::service('opigno_module.opigno_module');
-    $opigno_module_obj->activitiesToModule([$activity], $module);
+    $opigno_module_obj->activitiesToModule([$disclosure_activity], $disclosure);
+
+    $content = OpignoModule::create([
+      'type' => 'opigno_module',
+      'name' => $form_state->getValue('course_name') . ' Content',
+    ]);
+
+    $content->save();
+
+    $course->addContent($content, 'opigno_module_group');
+
+    $add_content = OpignoGroupManagedContent::createWithValues(
+      $course->id(),
+      'ContentTypeModule',
+      $content->id(),
+      0,
+      1
+    );
+
+    $add_content->save();
+
+    $content_activity = OpignoActivity::create([
+      'type' => 'opigno_slide',
+      'name' => $form_state->getValue('course_name') . ' Content',
+    ]);
+    
+    if (!empty($form_state->getValue('content'))) {
+      $content_activity->opigno_body->value = $form_state->getValue('content');
+      $content_activity->opigno_body->format = 'basic_html';
+    }
+
+    $content_activity->save();
+
+    $opigno_module_obj = \Drupal::service('opigno_module.opigno_module');
+    $opigno_module_obj->activitiesToModule([$content_activity], $content);
+
+    $link = OpignoGroupManagedLink::createWithValues(
+      $course->id(),
+      $disclosure->id(),
+      $content->id(),
+      0
+    );
+    
+    $link->save();
 
   }
 
