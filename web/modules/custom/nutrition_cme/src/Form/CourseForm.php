@@ -38,7 +38,7 @@ class CourseForm extends FormBase {
       '#type' => 'details',
       '#title' => t('Course'),
       '#collapsible' => TRUE,
-      '#description' => t('Input course information.'),
+      '#description' => t('Enter the course information.'),
       '#group' => 'course_form'
     ];
 
@@ -55,6 +55,26 @@ class CourseForm extends FormBase {
       '#description'=> t('Description of the course.'),
       '#required' => TRUE,
     ];
+
+    $form['course_info']['course_category'] = [
+      '#type' => 'entity_autocomplete',
+      '#target_type' => 'taxonomy_term',
+      '#title' => $this->t('Course Category'),
+      '#description' => $this->t('Select a category for the course.'),
+      '#selection_settings' => [
+        'target_bundles' => ['learning_path_category'],
+      ],
+    ];
+
+    $form['course_info']['course_image'] = [
+      '#type' => 'managed_file',
+      '#title' => t('Course Image'),
+      '#upload_validators' => array(
+          'file_validate_extensions' => array('gif png jpg jpeg'),
+          'file_validate_size' => array(25600000),
+      ),
+      '#upload_location' => 'public://course-images',
+   ];
 
     $form['disclosure_info'] = [
       '#type' => 'details',
@@ -112,6 +132,8 @@ class CourseForm extends FormBase {
       [
         'type' => 'learning_path',
         'label' => $form_state->getValue('course_name'),
+        'field_learning_path_category' => $form_state->getValue('course_category'),
+        'field_learning_path_media_image' => $form_state->getValue('course_image'),
       ]
     );
 
