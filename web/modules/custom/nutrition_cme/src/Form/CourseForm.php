@@ -28,28 +28,67 @@ class CourseForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $form['course_name'] = [
+
+    $form['course_form'] = [
+      '#type' => 'vertical_tabs',
+    ];
+
+    $form['course_info'] = [
+      '#type' => 'fieldset',
+      '#title' => t('Course'),
+      '#collapsible' => TRUE,
+      '#description' => t('Input course information.'),
+      '#group' => 'course_form'
+    ];
+
+    $form['course_info']['course_name'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Course Name:'),
+      '#description'=> t('Name of the course.'),
       '#required' => TRUE,
+      '#group' => 'course_form',
     ];
-    $form['disclosure'] = [
+
+    $form['course_info']['course_description'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('Course Description:'),
+      '#description'=> t('Description of the course.'),
+      '#required' => TRUE,
+      '#group' => 'course_form',
+    ];
+
+    $form['disclosure_info'] = [
+      '#type' => 'fieldset',
+      '#title' => t('Disclosure'),
+      '#collapsible' => TRUE,
+      '#description' => t('Input disclosure information.'),
+      '#group' => 'course_form'
+    ];
+
+    $form['disclosure_info']['disclosure'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Disclosure:'),
       '#required' => FALSE,
+      '#group' => 'course_form'
     ];
-    $form['content'] = [
+
+    $form['disclosure_info']['content'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Content:'),
       '#required' => FALSE,
+      '#group' => 'course_form'
     ];
+
     $form['actions']['#type'] = 'actions';
+
     $form['actions']['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Save'),
       '#button_type' => 'primary',
     ];
+
     return $form;
+
   }
 
   /**
