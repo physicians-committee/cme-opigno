@@ -34,43 +34,43 @@ class CourseForm extends FormBase {
       '#type' => 'vertical_tabs',
     ];
 
-    $form['course_form']['course_info'] = [
-      '#type' => 'fieldset',
+    $form['course_info'] = [
+      '#type' => 'details',
       '#title' => t('Course'),
       '#collapsible' => TRUE,
       '#description' => t('Input course information.'),
       '#group' => 'course_form'
     ];
 
-    $form['course_form']['course_info']['course_name'] = [
+    $form['course_info']['course_name'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Course Name:'),
       '#description'=> t('Name of the course.'),
       '#required' => TRUE,
     ];
 
-    $form['course_form']['course_info']['course_description'] = [
+    $form['course_info']['course_description'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Course Description:'),
       '#description'=> t('Description of the course.'),
       '#required' => TRUE,
     ];
 
-    $form['course_form']['disclosure_info'] = [
-      '#type' => 'fieldset',
+    $form['disclosure_info'] = [
+      '#type' => 'details',
       '#title' => t('Disclosure'),
       '#collapsible' => TRUE,
       '#description' => t('Input disclosure information.'),
       '#group' => 'course_form'
     ];
 
-    $form['course_form']['disclosure_info']['disclosure'] = [
+    $form['disclosure_info']['disclosure'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Disclosure:'),
       '#required' => FALSE,
     ];
 
-    $form['course_form']['disclosure_info']['content'] = [
+    $form['disclosure_info']['content'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Content:'),
       '#required' => FALSE,
