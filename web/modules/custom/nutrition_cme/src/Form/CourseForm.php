@@ -7,6 +7,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element\VerticalTabs;
 use Drupal\file\Entity\File;
 use Drupal\group\Entity\Group;
+use Drupal\media\Entity\Media;
 use Drupal\opigno_group_manager\Entity\OpignoGroupManagedContent;
 use Drupal\opigno_group_manager\Entity\OpignoGroupManagedLink;
 use Drupal\opigno_module\Entity\OpignoActivity;
@@ -51,10 +52,11 @@ class CourseForm extends FormBase {
     ];
 
     $form['course_info']['course_description'] = [
-      '#type' => 'textarea',
+      '#type' => 'text_format',
       '#title' => $this->t('Course Description:'),
       '#description'=> t('Description of the course.'),
       '#required' => TRUE,
+      '#format' => 'basic_html',
     ];
 
     $form['course_info']['course_category'] = [
@@ -135,6 +137,13 @@ class CourseForm extends FormBase {
       $file = File::load($course_image[0]);
       $file->setPermanent();
       $file->save();
+      $media = Media::create([
+        'bundle' => 'image',
+        'name' => $form_state->getValue('course_name'),
+        'field_media_file' => [
+          'target_id' => $file->id(),
+        ],
+      ]);
     }
 
     $course_description = $form_state->getValue('course_description');
@@ -145,7 +154,7 @@ class CourseForm extends FormBase {
         'label' => $form_state->getValue('course_name'),
         'field_learning_path_description' => ['value' => $course_description['value'], 'format' => $course_description['format']],
         'field_learning_path_category' => $form_state->getValue('course_category'),
-        'field_learning_path_media_image' => ['target_id' => $file->id()],
+        'field_learning_path_media_image' => ['target_id' => $media->id()],
       ]
     );
 
