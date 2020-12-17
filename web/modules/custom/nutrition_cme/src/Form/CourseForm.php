@@ -129,10 +129,12 @@ class CourseForm extends FormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
 
-    if ($form_state->getValue('course_image') !== NULL) {
-      $file = file_load($form_state->getValue('course_image'));
-      $file->status = FILE_STATUS_PERMANENT;
-      file_save($file);
+    $course_image = $form_state->getValue('course_image', 0);
+
+    if (isset($course_image[0]) && !empty($course_image[0])) {
+      $file = File::load($course_image[0]);
+      $file->setPermanent();
+      $file->save();
     }
 
     $course = Group::create(
@@ -143,6 +145,9 @@ class CourseForm extends FormBase {
         'field_learning_path_media_image' => $file,
       ]
     );
+
+    $course->field_learning_path_description->value = $form_state->getValue('course_description');
+    $course->field_learning_path_description->format = 'basic_html';
 
     $course->save();
 
