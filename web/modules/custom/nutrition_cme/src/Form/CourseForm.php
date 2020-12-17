@@ -146,6 +146,7 @@ class CourseForm extends FormBase {
           'alt' => $form_state->getValue('course_name'),
         ],
       ]);
+      $media->save();
     }
 
     $course_description = $form_state->getValue('course_description');
