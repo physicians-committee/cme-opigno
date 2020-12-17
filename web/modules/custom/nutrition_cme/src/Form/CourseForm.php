@@ -139,9 +139,11 @@ class CourseForm extends FormBase {
       $file->save();
       $media = Media::create([
         'bundle' => 'image',
+        'uid' => \Drupal::currentUser()->id(),
         'name' => $form_state->getValue('course_name'),
-        'field_media_file' => [
+        'field_media_image' => [
           'target_id' => $file->id(),
+          'alt' => $form_state->getValue('course_name'),
         ],
       ]);
     }
