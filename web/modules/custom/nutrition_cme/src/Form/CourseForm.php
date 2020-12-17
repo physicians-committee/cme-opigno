@@ -137,17 +137,17 @@ class CourseForm extends FormBase {
       $file->save();
     }
 
+    $course_description = $form_state->getValue('course_description');
+
     $course = Group::create(
       [
         'type' => 'learning_path',
         'label' => $form_state->getValue('course_name'),
+        'field_learning_path_description' => ['value' => $course_description['value'], 'format' => $course_description['format']],
         'field_learning_path_category' => $form_state->getValue('course_category'),
-        'field_learning_path_media_image' => $file,
+        'field_learning_path_media_image' => ['target_id' => $file->id()],
       ]
     );
-
-    $course->field_learning_path_description->value = $form_state->getValue('course_description');
-    $course->field_learning_path_description->format = 'basic_html';
 
     $course->save();
 
