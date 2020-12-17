@@ -128,12 +128,18 @@ class CourseForm extends FormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
 
+    if (isset($form_state->getValue('course_image')) {
+      $file = file_load($form_state->getValue('course_image'));
+      $file->status = FILE_STATUS_PERMANENT;
+      file_save($file);
+    }
+
     $course = Group::create(
       [
         'type' => 'learning_path',
         'label' => $form_state->getValue('course_name'),
         'field_learning_path_category' => $form_state->getValue('course_category'),
-        'field_learning_path_media_image' => $form_state->getValue('course_image'),
+        'field_learning_path_media_image' => $file,
       ]
     );
 
