@@ -129,7 +129,7 @@ class CourseForm extends FormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
 
-    if (isset($form_state->getValue('course_image')) {
+    if (isset($form_state->getValue('course_image'))) {
       $file = file_load($form_state->getValue('course_image'));
       $file->status = FILE_STATUS_PERMANENT;
       file_save($file);
