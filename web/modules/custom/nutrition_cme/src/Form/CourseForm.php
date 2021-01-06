@@ -163,6 +163,34 @@ class CourseForm extends FormBase {
 
     $course->save();
 
+    $profession = OpignoModule::create([
+      'type' => 'opigno_module',
+      'name' => $form_state->getValue('course_name') . ' Profession',
+    ]);
+
+    $profession->save();
+
+    $course->addContent($profession, 'opigno_module_group');
+
+    $add_profession = OpignoGroupManagedContent::createWithValues(
+      $course->id(),
+      'ContentTypeModule',
+      $profession->id(),
+      0,
+      1
+    );
+
+    $add_profession->save();
+
+    $profession_activity = OpignoActivity::create([
+      'type' => 'opigno_h5p',
+      'name' => $form_state->getValue('course_name') . ' Profession',
+    ]);
+
+    $profession_activity->set('opigno_h5p', 17);
+
+    $profession_activity->save();
+
     $disclosure = OpignoModule::create([
       'type' => 'opigno_module',
       'name' => $form_state->getValue('course_name') . ' Disclosure',
