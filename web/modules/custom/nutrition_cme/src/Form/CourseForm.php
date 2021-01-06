@@ -157,9 +157,12 @@ class CourseForm extends FormBase {
         'label' => $form_state->getValue('course_name'),
         'field_learning_path_description' => ['value' => $course_description['value'], 'format' => $course_description['format']],
         'field_learning_path_category' => $form_state->getValue('course_category'),
-        'field_learning_path_media_image' => ['target_id' => $media->id()],
       ]
     );
+
+    if ($media) {
+      $course->field_learning_path_media_image->target_id = $media->id();
+    }
 
     $course->save();
 
