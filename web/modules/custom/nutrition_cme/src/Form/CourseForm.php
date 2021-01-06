@@ -160,7 +160,7 @@ class CourseForm extends FormBase {
       ]
     );
 
-    if ($media) {
+    if (isset($media)) {
       $course->field_learning_path_media_image->target_id = $media->id();
     }
 
@@ -185,14 +185,10 @@ class CourseForm extends FormBase {
 
     $add_profession->save();
 
-    $profession_activity = OpignoActivity::create([
-      'type' => 'opigno_h5p',
-      'name' => $form_state->getValue('course_name') . ' Profession',
-    ]);
+    $profession_activity = OpignoActivity::load(17);
 
-    $profession_activity->set('opigno_h5p', 17);
-
-    $profession_activity->save();
+    $opigno_module_obj = \Drupal::service('opigno_module.opigno_module');
+    $opigno_module_obj->activitiesToModule([$profession_activity], $profession);
 
     $disclosure = OpignoModule::create([
       'type' => 'opigno_module',
