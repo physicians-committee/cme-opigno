@@ -269,8 +269,8 @@ class CourseForm extends FormBase {
 
     $link2 = OpignoGroupManagedLink::createWithValues(
       $add_content->getGroupId(),
-      $add_disclosure->id(),
       $add_content->id(),
+      $add_disclosure->id(),
       0
     );
 
