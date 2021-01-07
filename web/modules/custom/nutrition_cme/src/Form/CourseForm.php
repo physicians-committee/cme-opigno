@@ -259,7 +259,7 @@ class CourseForm extends FormBase {
     $opigno_module_obj->activitiesToModule([$content_activity], $content);
 
     $link1 = OpignoGroupManagedLink::createWithValues(
-      $add_content->getGroupId(),
+      $add_profession->getGroupId(),
       $add_profession->id(),
       $add_disclosure->id(),
       0
@@ -268,9 +268,9 @@ class CourseForm extends FormBase {
     $link1->save();
 
     $link2 = OpignoGroupManagedLink::createWithValues(
-      $add_content->getGroupId(),
-      $add_content->id(),
+      $add_disclosure->getGroupId(),
       $add_disclosure->id(),
+      $add_content->id(),
       0
     );
 
