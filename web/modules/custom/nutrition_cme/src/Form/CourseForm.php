@@ -258,14 +258,23 @@ class CourseForm extends FormBase {
     $opigno_module_obj = \Drupal::service('opigno_module.opigno_module');
     $opigno_module_obj->activitiesToModule([$content_activity], $content);
 
-    $link = OpignoGroupManagedLink::createWithValues(
+    $link1 = OpignoGroupManagedLink::createWithValues(
+      $add_content->getGroupId(),
+      $add_profession->id(),
+      $add_disclosure->id(),
+      0
+    );
+
+    $link1->save();
+
+    $link2 = OpignoGroupManagedLink::createWithValues(
       $add_content->getGroupId(),
       $add_disclosure->id(),
       $add_content->id(),
       0
     );
 
-    $link->save();
+    $link2->save();
 
   }
 
