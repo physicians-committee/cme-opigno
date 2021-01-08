@@ -1,9 +1,11 @@
 <?php
 
 /**
-  *grab user info for certificate display
+  * @file
+  * grab user info for certificate display
   */
 
+/* load current user variables for use in certificate */
 function cme_preprocess_opigno_certificate(&$variables) {
   $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
   $variables['firstname'] = $user->get('field_first_name')->value;
