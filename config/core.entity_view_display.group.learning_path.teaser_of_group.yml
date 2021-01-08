@@ -8,6 +8,9 @@ dependencies:
     - field.field.group.learning_path.field_certificate
     - field.field.group.learning_path.field_certificate_expire
     - field.field.group.learning_path.field_certificate_expire_results
+    - field.field.group.learning_path.field_course_expires
+    - field.field.group.learning_path.field_credits
+    - field.field.group.learning_path.field_excluded_professions
     - field.field.group.learning_path.field_guided_navigation
     - field.field.group.learning_path.field_learning_path_category
     - field.field.group.learning_path.field_learning_path_description
@@ -97,6 +100,9 @@ hidden:
   field_anonymous_visibility: true
   field_certificate_expire: true
   field_certificate_expire_results: true
+  field_course_expires: true
+  field_credits: true
+  field_excluded_professions: true
   field_guided_navigation: true
   field_learning_path_enable_forum: true
   field_learning_path_forum: true

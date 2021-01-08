@@ -1,0 +1,23 @@
+uuid: 923b45fc-64c6-4683-801d-76f33fd5a387
+langcode: en
+status: false
+dependencies:
+  module:
+    - private_message
+  theme:
+    - cme
+_core:
+  default_config_hash: YyBv3P89JqhFXGtEQj5CYIzIXVd8YzgjkBCvgYQJUU8
+id: cme_privatemessagenotification
+theme: cme
+region: help
+weight: -3
+provider: null
+plugin: private_message_notification_block
+settings:
+  id: private_message_notification_block
+  label: 'Private Message Notification'
+  provider: private_message
+  label_display: '0'
+  ajax_refresh_rate: 15
+visibility: {  }

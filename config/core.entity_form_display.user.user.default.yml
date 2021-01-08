@@ -4,11 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.user.user.field_created_by
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_last_name
     - field.field.user.user.field_profession
+    - field.field.user.user.field_profession_taxonomy_ref
     - field.field.user.user.user_picture
-    - image.style.medium
   module:
-    - image
     - user
 _core:
   default_config_hash: E42MMylEGIUkKXDvfdNmBqh440DonjMGhsHe7b5vCO8
@@ -23,39 +24,50 @@ content:
     settings: {  }
     third_party_settings: {  }
   contact:
-    weight: 3
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_first_name:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_last_name:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_profession:
-    weight: 5
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_profession_taxonomy_ref:
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   language:
-    weight: 2
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
-  private_messages:
-    weight: 0
-    settings: {  }
-    third_party_settings: {  }
-    region: content
   timezone:
-    weight: 4
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
-  user_picture:
-    type: image_image
-    settings:
-      preview_image_style: medium
-      progress_indicator: throbber
-    third_party_settings: {  }
-    weight: 1
-    region: content
 hidden:
   commerce_remote_id: true
   field_created_by: true
+  private_messages: true
+  user_picture: true

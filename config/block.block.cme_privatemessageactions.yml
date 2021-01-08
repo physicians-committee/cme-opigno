@@ -1,0 +1,31 @@
+uuid: 5fee300b-027b-4bdf-944e-fd1dff7851e7
+langcode: en
+status: false
+dependencies:
+  enforced:
+    module:
+      - private_message
+  module:
+    - private_message
+    - system
+  theme:
+    - cme
+_core:
+  default_config_hash: cw9CRgAFnwsLlehJngGO3y4VdvKW51EqBoLKdAI-tqg
+id: cme_privatemessageactions
+theme: cme
+region: help
+weight: 0
+provider: null
+plugin: private_message_actions_block
+settings:
+  id: private_message_actions_block
+  label: Actions
+  provider: private_message
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: "/private_messages\r\n/private_messages/*\r\n/private_message/create"
+    negate: false
+    context_mapping: {  }

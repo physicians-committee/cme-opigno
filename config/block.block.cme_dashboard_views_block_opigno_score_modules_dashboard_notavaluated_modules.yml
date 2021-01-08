@@ -1,0 +1,32 @@
+uuid: 2ad36c6d-6539-47b4-93f2-c8588d902400
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.opigno_score_modules
+  module:
+    - system
+    - views
+  theme:
+    - cme
+_core:
+  default_config_hash: G63cuxcr2iFec7Fa-a8qn4oIrFzfmxrhjXQn09Rt3zY
+id: cme_dashboard_views_block_opigno_score_modules_dashboard_notavaluated_modules
+theme: cme
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:opigno_score_modules-dashboard_notavaluated_modules'
+settings:
+  id: 'views_block:opigno_score_modules-dashboard_notavaluated_modules'
+  label: 'Dashboard: Opigno: not evalueated modules'
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

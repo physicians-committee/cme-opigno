@@ -1,0 +1,28 @@
+uuid: 0d77d9e9-0b4d-4447-ad08-552c30dbc3f2
+langcode: en
+status: true
+dependencies:
+  module:
+    - opigno_learning_path
+    - system
+  theme:
+    - cme
+_core:
+  default_config_hash: cR760cwgCU6YxR6eTwWxW8ZV21rDvfvb4JtfZsnLOLw
+id: cme_lp_steps_block
+theme: cme
+region: sidebar_first
+weight: -15
+provider: null
+plugin: lp_steps_block
+settings:
+  id: lp_steps_block
+  label: 'LP Steps'
+  provider: opigno_learning_path
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/module/*/result*\r\n/group/*/module/*"
+    negate: false
+    context_mapping: {  }

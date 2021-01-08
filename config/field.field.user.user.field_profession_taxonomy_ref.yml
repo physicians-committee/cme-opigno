@@ -1,0 +1,30 @@
+uuid: b6006c51-ddf8-4f16-afff-dc3425bbf240
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_profession_taxonomy_ref
+    - taxonomy.vocabulary.professions
+  module:
+    - user
+id: user.user.field_profession_taxonomy_ref
+field_name: field_profession_taxonomy_ref
+entity_type: user
+bundle: user
+label: Profession
+description: 'Certificates are awarded based on the profession selected. Please select a profession to get the correct certificate.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      professions: professions
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

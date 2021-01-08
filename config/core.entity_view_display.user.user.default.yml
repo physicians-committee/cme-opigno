@@ -4,7 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.user.user.field_created_by
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_last_name
     - field.field.user.user.field_profession
+    - field.field.user.user.field_profession_taxonomy_ref
     - field.field.user.user.user_picture
     - image.style.medium
   module:
@@ -18,12 +21,36 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
+  field_first_name:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_last_name:
+    weight: 4
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_profession:
     weight: 2
     label: above
     settings: {  }
     third_party_settings: {  }
     type: list_default
+    region: content
+  field_profession_taxonomy_ref:
+    weight: 5
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   member_for:
     weight: 1
@@ -48,3 +75,4 @@ hidden:
   linked_username: true
   private_message_link: true
   profile_customer: true
+  search_api_excerpt: true

@@ -1,0 +1,20 @@
+uuid: 3327f7be-ce39-403e-866e-208779a94563
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+id: group.field_credits
+field_name: field_credits
+entity_type: group
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

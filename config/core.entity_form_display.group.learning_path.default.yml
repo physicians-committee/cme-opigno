@@ -1,22 +1,32 @@
+uuid: null
 langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.media_entity_browser_groups
     - field.field.group.learning_path.field_anonymous_visibility
     - field.field.group.learning_path.field_certificate
     - field.field.group.learning_path.field_certificate_expire
     - field.field.group.learning_path.field_certificate_expire_results
+    - field.field.group.learning_path.field_course_expires
+    - field.field.group.learning_path.field_credits
+    - field.field.group.learning_path.field_excluded_professions
+    - field.field.group.learning_path.field_guided_navigation
     - field.field.group.learning_path.field_learning_path_category
     - field.field.group.learning_path.field_learning_path_description
     - field.field.group.learning_path.field_learning_path_duration
+    - field.field.group.learning_path.field_learning_path_enable_forum
     - field.field.group.learning_path.field_learning_path_folder
+    - field.field.group.learning_path.field_learning_path_forum
     - field.field.group.learning_path.field_learning_path_media_image
     - field.field.group.learning_path.field_learning_path_published
     - field.field.group.learning_path.field_learning_path_visibility
     - field.field.group.learning_path.field_required_trainings
     - field.field.group.learning_path.field_requires_validation
+    - field.field.group.learning_path.field_workspace
     - group.type.learning_path
   module:
+    - datetime
     - entity_browser
     - text
 id: group.learning_path.default
@@ -25,7 +35,7 @@ bundle: learning_path
 mode: default
 content:
   field_anonymous_visibility:
-    weight: 5
+    weight: 4
     settings:
       display_label: true
     third_party_settings: {  }
@@ -50,8 +60,31 @@ content:
     third_party_settings: {  }
     type: options_select
     region: content
+  field_course_expires:
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_credits:
+    weight: 8
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_excluded_professions:
+    weight: 15
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_learning_path_category:
-    weight: 7
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -65,7 +98,7 @@ content:
     type: text_textarea
     region: content
   field_learning_path_duration:
-    weight: 8
+    weight: 7
     settings:
       size: 60
       placeholder: ''
@@ -74,7 +107,7 @@ content:
     region: content
   field_learning_path_enable_forum:
     type: boolean_checkbox
-    weight: 6
+    weight: 5
     region: content
     settings:
       display_label: true
@@ -95,7 +128,7 @@ content:
     type: entity_browser_entity_reference
     region: content
   field_learning_path_visibility:
-    weight: 3
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -108,7 +141,7 @@ content:
       placeholder: '0.00'
     third_party_settings: {  }
   field_required_trainings:
-    weight: 14
+    weight: 13
     settings:
       match_operator: CONTAINS
       size: 60
@@ -118,7 +151,7 @@ content:
     type: entity_reference_autocomplete_tags
     region: content
   field_requires_validation:
-    weight: 4
+    weight: 3
     settings:
       display_label: true
     third_party_settings: {  }
@@ -133,6 +166,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
 hidden:
+  field_guided_navigation: true
   field_learning_path_folder: true
   field_learning_path_forum: true
   field_learning_path_published: true

@@ -1,7 +1,10 @@
+uuid: null
 langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.group.field_course_expires
+    - field.storage.group.field_credits
     - field.storage.group.field_learning_path_category
     - field.storage.group.field_learning_path_description
     - field.storage.group.field_learning_path_media_image
@@ -10,6 +13,7 @@ dependencies:
     - taxonomy.vocabulary.learning_path_category
   module:
     - better_exposed_filters
+    - datetime
     - group
     - media
     - opigno_learning_path
@@ -544,6 +548,200 @@ display:
           hide_alter_empty: true
           entity_type: group
           plugin_id: opigno_learning_path_progress
+        field_course_expires:
+          id: field_course_expires
+          table: group__field_course_expires
+          field: field_course_expires
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Course Expires'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: datetime_default
+          settings:
+            timezone_override: ''
+            format_type: long
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_credits:
+          id: field_credits
+          table: group__field_credits
+          field: field_credits
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Course Credits'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_decimal
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+            decimal_separator: .
+            scale: 1
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_course_expires_1:
+          id: field_course_expires_1
+          table: group__field_course_expires
+          field: field_course_expires
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: '{% if  (date(field_course_expires_1__value) < date(''+1years'')) %}<em>Note: This course is currently expired for Nurses</em>{% endif %}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: datetime_default
+          settings:
+            timezone_override: ''
+            format_type: medium
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         opigno_lp_take_link:
           id: opigno_lp_take_link
           table: groups_field_data
@@ -554,8 +752,8 @@ display:
           label: ''
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: '{%if (date(field_course_expires_1) < date()) %}<em>This course is currently expired.</em>{% else %}{{ opigno_lp_take_link }}{% endif %}'
             make_link: false
             path: ''
             absolute: false
@@ -618,13 +816,15 @@ display:
           operator: '='
           value: '0'
           group: 1
-          exposed: true
+          exposed: false
           expose:
             operator_id: ''
             label: Filter
             description: ''
             use_operator: false
             operator: opigno_group_membership_op
+            operator_limit_selection: false
+            operator_list: {  }
             identifier: opigno_group_membership
             required: true
             remember: false
@@ -637,8 +837,6 @@ display:
               user_manager: '0'
               statistics_reader: '0'
               opigno_administrator: '0'
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -804,6 +1002,571 @@ display:
         - 'url.query_args:sort_by'
         - user
       tags:
+        - 'config:field.storage.group.field_course_expires'
+        - 'config:field.storage.group.field_credits'
+        - 'config:field.storage.group.field_learning_path_category'
+        - 'config:field.storage.group.field_learning_path_description'
+        - 'config:field.storage.group.field_learning_path_media_image'
+  catalog_default:
+    display_plugin: block
+    id: catalog_default
+    display_title: 'My CME Courses'
+    position: 5
+    display_options:
+      display_extenders: {  }
+      display_description: 'This block is used on the /my-courses page to show all courses I am enrolled in.'
+      filters:
+        type:
+          id: type
+          table: groups_field_data
+          field: type
+          value:
+            learning_path: learning_path
+          entity_type: group
+          entity_field: type
+          plugin_id: bundle
+          group: 1
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        opigno_group_membership:
+          id: opigno_group_membership
+          table: groups_field_data
+          field: opigno_group_membership
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: Filter
+            description: ''
+            use_operator: false
+            operator: opigno_group_membership_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: opigno_group_membership
+            required: true
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_manager: '0'
+              user_manager: '0'
+              statistics_reader: '0'
+              opigno_administrator: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: group
+          plugin_id: opigno_group_membership_boolean
+        field_learning_path_category_target_id:
+          id: field_learning_path_category_target_id
+          table: group__field_learning_path_category
+          field: field_learning_path_category_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_learning_path_category_target_id_op
+            label: ''
+            description: ''
+            use_operator: false
+            operator: field_learning_path_category_target_id_op
+            identifier: field_learning_path_category_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_manager: '0'
+              user_manager: '0'
+              statistics_reader: '0'
+              opigno_administrator: '0'
+            reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: learning_path_category
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+        field_learning_path_published_value:
+          id: field_learning_path_published_value
+          table: group__field_learning_path_published
+          field: field_learning_path_published_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: boolean
+      defaults:
+        filters: false
+        filter_groups: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'url.query_args:sort_by'
+        - user
+      tags:
+        - 'config:field.storage.group.field_course_expires'
+        - 'config:field.storage.group.field_credits'
+        - 'config:field.storage.group.field_learning_path_category'
+        - 'config:field.storage.group.field_learning_path_description'
+        - 'config:field.storage.group.field_learning_path_media_image'
+  catalog_nurses:
+    display_plugin: block
+    id: catalog_nurses
+    display_title: 'Catalog for Nurses'
+    position: 4
+    display_options:
+      display_extenders: {  }
+      display_description: 'This block is used on the /my-courses page to list courses for nurses. It enforces a 1-year-earlier expiration date.'
+      title: 'My CME Courses'
+      defaults:
+        title: false
+        filters: false
+        filter_groups: false
+      filters:
+        type:
+          id: type
+          table: groups_field_data
+          field: type
+          value:
+            learning_path: learning_path
+          entity_type: group
+          entity_field: type
+          plugin_id: bundle
+          group: 1
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        opigno_group_membership:
+          id: opigno_group_membership
+          table: groups_field_data
+          field: opigno_group_membership
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: Filter
+            description: ''
+            use_operator: false
+            operator: opigno_group_membership_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: opigno_group_membership
+            required: true
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_manager: '0'
+              user_manager: '0'
+              statistics_reader: '0'
+              opigno_administrator: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: group
+          plugin_id: opigno_group_membership_boolean
+        field_learning_path_category_target_id:
+          id: field_learning_path_category_target_id
+          table: group__field_learning_path_category
+          field: field_learning_path_category_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_learning_path_category_target_id_op
+            label: ''
+            description: ''
+            use_operator: false
+            operator: field_learning_path_category_target_id_op
+            identifier: field_learning_path_category_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_manager: '0'
+              user_manager: '0'
+              statistics_reader: '0'
+              opigno_administrator: '0'
+            reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: learning_path_category
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+        field_learning_path_published_value:
+          id: field_learning_path_published_value
+          table: group__field_learning_path_published
+          field: field_learning_path_published_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: boolean
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'url.query_args:sort_by'
+        - user
+      tags:
+        - 'config:field.storage.group.field_course_expires'
+        - 'config:field.storage.group.field_credits'
+        - 'config:field.storage.group.field_learning_path_category'
+        - 'config:field.storage.group.field_learning_path_description'
+        - 'config:field.storage.group.field_learning_path_media_image'
+  page_1:
+    display_plugin: page
+    id: page_1
+    display_title: 'Training Catalog for Nurses'
+    position: 2
+    display_options:
+      display_extenders: {  }
+      display_description: 'Nurses course expiration date is different from other professions'
+      path: catalogue
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'url.query_args:sort_by'
+        - user
+      tags:
+        - 'config:field.storage.group.field_course_expires'
+        - 'config:field.storage.group.field_credits'
+        - 'config:field.storage.group.field_learning_path_category'
+        - 'config:field.storage.group.field_learning_path_description'
+        - 'config:field.storage.group.field_learning_path_media_image'
+  page_2:
+    display_plugin: page
+    id: page_2
+    display_title: 'My CME Courses'
+    position: 3
+    display_options:
+      display_extenders: {  }
+      path: my-courses-temp
+      filters:
+        type:
+          id: type
+          table: groups_field_data
+          field: type
+          value:
+            learning_path: learning_path
+          entity_type: group
+          entity_field: type
+          plugin_id: bundle
+          group: 1
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        opigno_group_membership:
+          id: opigno_group_membership
+          table: groups_field_data
+          field: opigno_group_membership
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: Filter
+            description: ''
+            use_operator: false
+            operator: opigno_group_membership_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: opigno_group_membership
+            required: true
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_manager: '0'
+              user_manager: '0'
+              statistics_reader: '0'
+              opigno_administrator: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: group
+          plugin_id: opigno_group_membership_boolean
+        field_learning_path_category_target_id:
+          id: field_learning_path_category_target_id
+          table: group__field_learning_path_category
+          field: field_learning_path_category_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_learning_path_category_target_id_op
+            label: ''
+            description: ''
+            use_operator: false
+            operator: field_learning_path_category_target_id_op
+            identifier: field_learning_path_category_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              content_manager: '0'
+              user_manager: '0'
+              statistics_reader: '0'
+              opigno_administrator: '0'
+            reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: learning_path_category
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+        field_learning_path_published_value:
+          id: field_learning_path_published_value
+          table: group__field_learning_path_published
+          field: field_learning_path_published_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: boolean
+      defaults:
+        filters: false
+        filter_groups: false
+        title: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      title: 'My CME Courses'
+      display_description: ''
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'url.query_args:sort_by'
+        - user
+      tags:
+        - 'config:field.storage.group.field_course_expires'
+        - 'config:field.storage.group.field_credits'
         - 'config:field.storage.group.field_learning_path_category'
         - 'config:field.storage.group.field_learning_path_description'
         - 'config:field.storage.group.field_learning_path_media_image'
@@ -827,6 +1590,8 @@ display:
         - 'url.query_args:sort_by'
         - user
       tags:
+        - 'config:field.storage.group.field_course_expires'
+        - 'config:field.storage.group.field_credits'
         - 'config:field.storage.group.field_learning_path_category'
         - 'config:field.storage.group.field_learning_path_description'
         - 'config:field.storage.group.field_learning_path_media_image'

@@ -1,0 +1,8 @@
+uuid: fbbd319b-5d50-43b6-aeb3-ba923dd444c4
+langcode: en
+status: true
+dependencies: {  }
+name: Professions
+vid: professions
+description: ''
+weight: 0

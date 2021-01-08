@@ -1,0 +1,29 @@
+uuid: 53ed26de-0eb0-4235-aecb-89911d42bf66
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_excluded_professions
+    - group.type.learning_path
+    - taxonomy.vocabulary.professions
+id: group.learning_path.field_excluded_professions
+field_name: field_excluded_professions
+entity_type: group
+bundle: learning_path
+label: 'Excluded Professions'
+description: 'Choose which if any professions should not be allowed to receive a certificate for this course.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      professions: professions
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

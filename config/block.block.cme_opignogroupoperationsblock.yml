@@ -1,0 +1,30 @@
+uuid: d87f56b7-6baa-472d-826f-c0ab0a16621d
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+    - opigno_learning_path
+  theme:
+    - cme
+_core:
+  default_config_hash: cpMXwn_VP6R5chWeY1lRNZIgPLC1muEHGKfXLklsqos
+id: cme_opignogroupoperationsblock
+theme: cme
+region: content
+weight: -1
+provider: null
+plugin: group_operations_lp
+settings:
+  id: group_operations_lp
+  label: 'Opigno Group Operations Block'
+  provider: opigno_learning_path
+  label_display: '0'
+visibility:
+  group_type:
+    id: group_type
+    group_types:
+      learning_path: learning_path
+    negate: false
+    context_mapping:
+      group: '@group.group_route_context:group'

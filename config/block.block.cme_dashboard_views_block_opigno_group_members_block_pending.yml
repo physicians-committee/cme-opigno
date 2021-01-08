@@ -1,0 +1,32 @@
+uuid: c39ff512-a237-4b19-8ede-687f060281d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.opigno_group_members
+  module:
+    - system
+    - views
+  theme:
+    - cme
+_core:
+  default_config_hash: DQeSeInrehcBEQmQPQi00Y2XozAzxl9UfMYTp4cQRtc
+id: cme_dashboard_views_block_opigno_group_members_block_pending
+theme: cme
+region: content
+weight: 1
+provider: null
+plugin: 'views_block:opigno_group_members-block_pending'
+settings:
+  id: 'views_block:opigno_group_members-block_pending'
+  label: 'Dashboard: Pending Memberships'
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

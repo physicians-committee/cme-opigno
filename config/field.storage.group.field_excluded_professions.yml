@@ -1,0 +1,20 @@
+uuid: d8dca988-1985-4a24-bca3-ecab5191cda5
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+    - taxonomy
+id: group.field_excluded_professions
+field_name: field_excluded_professions
+entity_type: group
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

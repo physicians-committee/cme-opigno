@@ -1,0 +1,24 @@
+uuid: 9a6f10bc-29ca-407d-8658-fae869fb26ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_course_expires
+    - group.type.learning_path
+  module:
+    - datetime
+id: group.learning_path.field_course_expires
+field_name: field_course_expires
+entity_type: group
+bundle: learning_path
+label: 'Course Expires'
+description: 'The last day that users can complete this course and earn a certificate.'
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: relative
+    default_date: '+3 years'
+default_value_callback: ''
+settings: {  }
+field_type: datetime

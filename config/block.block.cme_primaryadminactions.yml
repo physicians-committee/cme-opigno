@@ -1,0 +1,27 @@
+uuid: 8f7ea266-2562-4786-9a81-db1ac242de89
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - cme
+_core:
+  default_config_hash: t5kQiNRrUGliXJbKpoTiYuMNe4uh52vsvuXw0JLH3-g
+id: cme_primaryadminactions
+theme: cme
+region: content
+weight: 2
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Catalog Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /catalogue
+    negate: false
+    context_mapping: {  }

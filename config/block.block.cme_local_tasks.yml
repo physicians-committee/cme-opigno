@@ -1,0 +1,29 @@
+uuid: 1139c2ba-a916-4605-983b-bfc7a648151d
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - cme
+_core:
+  default_config_hash: GyrKRKDxT6DDZFysbJqpj6fUDTO6XmG2lJYsDLmuvEg
+id: cme_local_tasks
+theme: cme
+region: content
+weight: -2
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility:
+  request_path:
+    id: request_path
+    pages: "/group/*\r\n/opigno/calendar*\r\n/opigno/calendar/*"
+    negate: true
+    context_mapping: {  }

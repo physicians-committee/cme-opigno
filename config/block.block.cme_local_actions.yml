@@ -1,0 +1,27 @@
+uuid: 5ef4553c-b175-4f7a-af1f-fe297725c28e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - cme
+_core:
+  default_config_hash: 5MF7b8PL0IGo9mKYHJgC2JdVpZZPIczEfalg1PKPmo8
+id: cme_local_actions
+theme: cme
+region: content
+weight: -10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/catalogue\r\n/group/classes"
+    negate: true
+    context_mapping: {  }

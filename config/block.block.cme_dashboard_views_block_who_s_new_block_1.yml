@@ -1,0 +1,32 @@
+uuid: e43fe5d0-e38b-48e3-bb69-5987b4b29ff1
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.who_s_new
+  module:
+    - system
+    - views
+  theme:
+    - cme
+_core:
+  default_config_hash: ZlCPNGC4X5AWfeWxfeomGxRVaVQ3k-wkG6eLxEvZ3z4
+id: cme_dashboard_views_block_who_s_new_block_1
+theme: cme
+region: content
+weight: -6
+provider: null
+plugin: 'views_block:who_s_new-block_1'
+settings:
+  id: 'views_block:who_s_new-block_1'
+  label: 'Dashboard: Who''s new'
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

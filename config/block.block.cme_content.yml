@@ -1,0 +1,22 @@
+uuid: 5bbd400a-970c-49c4-9c40-c0812c70a098
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - cme
+_core:
+  default_config_hash: 1M3v00qimf309JJUOzcesFkJONWm0AeSA7Hu4o85krg
+id: cme_content
+theme: cme
+region: content
+weight: 1
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

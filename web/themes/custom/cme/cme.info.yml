@@ -3,3 +3,14 @@ type: theme
 description: Custom front-end theme for NutritionCME built on Opigno
 core: 8.x
 base theme: platon
+
+regions:
+  help: 'Help'
+  branding: 'Branding'
+  menu: 'Menu'
+  admin_opigno: 'Admin opigno menu'
+  status_messages: 'Status messages'
+  top: 'Top'
+  sidebar_first: 'Sidebar first'
+  content: 'Content'
+  footer: 'Footer'

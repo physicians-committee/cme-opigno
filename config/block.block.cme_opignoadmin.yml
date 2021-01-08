@@ -1,0 +1,38 @@
+uuid: e0554f39-6d9a-4222-b2a8-8381d8db5c45
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.opigno-admin
+  module:
+    - system
+    - user
+  theme:
+    - cme
+_core:
+  default_config_hash: IDiowfzt0nI4_yEfOWloPtj1CE-YO6wvbb-oqTpBehE
+id: cme_opignoadmin
+theme: cme
+region: admin_opigno
+weight: -15
+provider: null
+plugin: 'system_menu_block:opigno-admin'
+settings:
+  id: 'system_menu_block:opigno-admin'
+  label: 'Opigno admin'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+      user_manager: user_manager
+      content_manager: content_manager
+      administrator: administrator
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

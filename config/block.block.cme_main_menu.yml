@@ -1,0 +1,27 @@
+uuid: 1f3c60f8-6280-4cdd-a649-e90124dfec81
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - cme
+_core:
+  default_config_hash: l8tExfwfQJsACh0mj6kGl_VmeQlbGCsIxrFa_85jOdM
+id: cme_main_menu
+theme: cme
+region: menu
+weight: -16
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

@@ -1,4 +1,4 @@
-default: platon
+default: cme
 admin: platon
 _core:
   default_config_hash: n6JvoqbpES6orYo7qE_TUX8GE1mNVFOYB8gTd1HL8oU

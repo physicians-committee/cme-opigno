@@ -1,0 +1,32 @@
+uuid: 11fb00fd-b9a4-400f-b970-f613caba8458
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.comments_recent
+  module:
+    - system
+    - views
+  theme:
+    - cme
+_core:
+  default_config_hash: P3c2ni5eRSqxo5A_73iw7Sy9WE2YP3vZ1NjqBSAti6o
+id: cme_dashboard_views_block_comments_recent_block_1
+theme: cme
+region: content
+weight: 1
+provider: null
+plugin: 'views_block:comments_recent-block_1'
+settings:
+  id: 'views_block:comments_recent-block_1'
+  label: 'Dashboard: Recent comments'
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

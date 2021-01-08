@@ -1,0 +1,27 @@
+uuid: 0f1ddf09-67ea-43fe-9eb2-fb0115a698e1
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - cme
+id: cme_tabs
+theme: cme
+region: content
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility:
+  request_path:
+    id: request_path
+    pages: "/group/*\r\n/user/*/edit\r\n/user/*\r\n/opigno/calendar\r\n/opigno/calendar/*"
+    negate: true
+    context_mapping: {  }

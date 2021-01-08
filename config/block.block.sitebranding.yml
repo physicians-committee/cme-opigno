@@ -1,0 +1,23 @@
+uuid: 58a9e509-7c94-4320-b910-13d12409f8c9
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - cme
+id: sitebranding
+theme: cme
+region: branding
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

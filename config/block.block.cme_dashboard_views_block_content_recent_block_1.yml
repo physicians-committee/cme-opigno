@@ -1,0 +1,32 @@
+uuid: 3f405a21-da64-4b44-a3e4-af5547bd3182
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.content_recent
+  module:
+    - system
+    - views
+  theme:
+    - cme
+_core:
+  default_config_hash: mEzZC5sT2LEMU6dUBVb4F81uevj0OlCZ7bX6MAeguT8
+id: cme_dashboard_views_block_content_recent_block_1
+theme: cme
+region: content
+weight: -8
+provider: null
+plugin: 'views_block:content_recent-block_1'
+settings:
+  id: 'views_block:content_recent-block_1'
+  label: 'Dashboard: Recent content'
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
