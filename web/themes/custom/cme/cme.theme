@@ -8,7 +8,7 @@ use Drupal\User\Entity\User;
  */
 
 /**
- * Implements hook_preprocess ().
+ * Implements hook_preprocess() for opigno_certificate.html.twig.
  */
 function cme_preprocess_opigno_certificate(&$variables) {
   $user = \Drupal::currentUser()->id();
