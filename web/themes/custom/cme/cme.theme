@@ -1,9 +1,9 @@
 <?php
 
 /**
-  * @file
-  * grab user info for certificate display
-  */
+ * @file
+ * Grab user info for certificate display
+ */
 
 /* load current user variables for use in certificate */
 function cme_preprocess_opigno_certificate(&$variables) {
