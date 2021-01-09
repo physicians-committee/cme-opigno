@@ -7,6 +7,9 @@ use Drupal\User\Entity\User;
  * Grab user info for certificate display.
  */
 
+/**
+ * Implements hook_preprocess ().
+ */
 function cme_preprocess_opigno_certificate(&$variables) {
   $user = \Drupal::currentUser()->id();
   $variables['firstname'] = $user->get('field_first_name')->value;
