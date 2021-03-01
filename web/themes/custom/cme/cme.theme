@@ -5,10 +5,10 @@
  * Grab user info for certificate display.
  */
 
-
 /**
  * Load user information and make it available to opigno_certificate.
  */
+
 function cme_preprocess_opigno_certificate(&$variables) {
   $user = load(\Drupal::currentUser()->id());
   $variables['firstname'] = $user->get('field_first_name')->value;
