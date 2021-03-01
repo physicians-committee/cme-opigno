@@ -1,11 +1,11 @@
 <?php
 
-use Drupal\User\Entity\User;
-
 /**
  * @file
  * Grab user info for certificate display.
  */
+
+use Drupal\User\Entity\User;
 
 /**
  * Load user information and make it available to opigno_certificate.
