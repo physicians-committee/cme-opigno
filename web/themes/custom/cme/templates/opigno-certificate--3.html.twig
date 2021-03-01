@@ -1,20 +1,14 @@
 
 {# firstname, lastname and profession are set in cme.theme #}
 
-{% set profession = 'physician' %}
 
-{% if profession == 'dietitian' or profession == 'nurse' or profession == 'coach' %}
+{% if profession == 'Dietitian' or profession == 'Nurse' or profession == 'Health & Wellness Coach' %}
 	{% set generic_certificate = false %}
 {% else %}
 	{% set generic_certificate = true %}
 {% endif %}
 
 {% set credits = referencing_entity.field_credits.0.value %}
-
- {% for key,value in professiontax %}
- <p>Key : {{ key }} Value : {{ value }}</p>
- {% endfor %}
-
 
 <div style="text-align: center;">
 {% if generic_certificate %}
@@ -39,11 +33,11 @@ has participated in
 </h3>
 <i>{{ completed_on }}</i>
 <br><br>
-{% if profession == 'nurse' %}
+{% if profession == 'Nurse' %}
 And has earned the following<h3 style="color:#005978;">CE Credits: {{ credits }} hour</h3>
-{% elseif profession == 'dietitian' %}
+{% elseif profession == 'Dietitian' %}
 And has earned the following<h3 style="color:#005978;">CPEU Credits: {{ credits }} hour</h3><h3 style="color:#005978;">CPE Level: [node:field-cpe-level]</h3>
-{% elseif profession == 'coach' %}
+{% elseif profession == 'Health & Wellness Coach' %}
 And has earned the following
 <h3 style="color:#005978;">{{ credits }} continuing education units</h3>
 {% else %}
@@ -52,13 +46,13 @@ The time of participation was<h3 style="color:#768644;">{{ credits }} hour</h3>
 </div>
 
 {# conditional display for professions #}
-{% if profession == 'dietitian' %}
+{% if profession == 'Dietitian' %}
 <p>This continuing education opportunity has been approved by the Commission on Dietetic Registration (CDR).</p><p>Registered dietitians (RDs) and dietetic technicians, registered (DTRs) will receive [node:course:credits] Continuing Professional Education Unit (CPEU) for completion of this program.</p><p><img alt="Susan Levin signature" src="https://nutritioncme.org/sites/default/files/pictures/SusanLevinSig.jpg"><br><strong>Susan Levin, MS, RD, CSSD,</strong> Director of Nutrition Education, Physicians Committee for Responsible Medicine</p>
 
-{% elseif profession == 'nurse' %}
+{% elseif profession == 'Nurse' %}
 <p>This continuing nursing education activity was approved by the Virginia Nurses Association, an accredited approver by the American Nurses Credentialing Center's Commission on Accreditation.</p><p><img alt="Susan Levin signature" src="https://nutritioncme.org/sites/default/files/pictures/CarolineTrappSig.jpg"></p><p><strong>Caroline Trapp, DNP, ANP-BC, CDCES, DIPACLM, FAANP</strong>, Physicians Committee for Responsible Medicine<br>&nbsp;</p>
 
-{% elseif profession == 'coach' %}
+{% elseif profession == 'Health & Wellness Coach' %}
 <p><strong>ACCREDITATION:</strong> The activity is approved by the National Board for Health and Wellness Coaching (NBHWC) for {{ credits }} continuing education units (CEP # 100146).</p>
 <p>Physicians Committee for Responsible Medicine<br>5100 Wisconsin Ave. NW, Suite 400<br>Washington, D.C. 20016<br>pcrm.org</p>
 
